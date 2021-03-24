@@ -1,5 +1,6 @@
 <?php
-include('koneksi.php');
+include_once("functions/include_all.php");
+shold_login();
 include('layout.php');
 $koneksi = koneksi_sanggar();
 //tampilkan data yang akan dibuat

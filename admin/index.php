@@ -1,5 +1,6 @@
 <?php
-    include('koneksi.php');
+    include('functions/include_all.php');
+    should_login();
     include('layout.php');
     $koneksi = koneksi_sanggar();
 
@@ -11,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanggar | Dashboard</title>
+    <title>Sanggar | Admin Dashboard</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
@@ -35,7 +36,7 @@
                     <a href="index3.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a href="#" class="nav-link">Hubungi</a>
                 </li>
             </ul>
         </nav>
