@@ -1,7 +1,6 @@
 <?php
     include('functions/include_all.php');
     should_login();
-    include('layout.php');
     $koneksi = koneksi_sanggar();
 
 ?>

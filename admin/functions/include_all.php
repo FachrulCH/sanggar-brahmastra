@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__.'/variables.php');
 require_once(__DIR__.'/database.php');
+require_once(__DIR__.'/layout.php');
 
 session_start();
 function should_login(){

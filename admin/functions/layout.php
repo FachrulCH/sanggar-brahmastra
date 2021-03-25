@@ -18,7 +18,7 @@ function layout_sidebar(){
                         <img src="dist/img/user7-128x128.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Firah Putri</a>
+                        <a href="#" class="d-block">$_SESSION[name]</a>
                     </div>
                 </div>
 
@@ -37,7 +37,14 @@ function layout_sidebar(){
                             </a>
                         </li>
                         <li class="nav-header">Menu</li>
-                       
+                        <li class="nav-item">
+                            <a href="guru.php" class="nav-link">
+                                <i class="nav-icon far fa-user"></i>
+                                <p>
+                                    Profil Guru
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="kegiatan.php" class="nav-link">
                                 <i class="nav-icon far fa-calendar-alt"></i>
@@ -124,7 +131,7 @@ function layout_sidebar(){
     HTML;
     echo $html;
 }
-function layout_header(){
+function layout_header($page_title='Dashboard', $add_css=''){
 $header = <<<HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -133,7 +140,7 @@ $header = <<<HTML
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanggar | Dashboard</title>
+    <title>$page_title | Sanggar</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
@@ -142,7 +149,7 @@ $header = <<<HTML
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
+    $add_css
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

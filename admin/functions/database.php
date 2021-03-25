@@ -8,5 +8,13 @@
 
  function db_query($sql){
     $tampil = mysqli_query(koneksi_sanggar(), $sql);
-    return mysqli_fetch_array($tampil);
+    return mysqli_fetch_assoc($tampil);
+ }
+
+ function db_get_all($sql){
+    $tampil = mysqli_query(koneksi_sanggar(), $sql);
+    while($row = mysqli_fetch_assoc($tampil)){
+        $return[] = $row;
+    }
+    return $return;
  }

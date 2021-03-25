@@ -1,31 +1,21 @@
 <?php
 include_once("functions/include_all.php");
-shold_login();
-include('layout.php');
+should_login();
 $koneksi = koneksi_sanggar();
 //tampilkan data yang akan dibuat
 $tampil = mysqli_query($koneksi, "SELECT * from tb_kegiatan");
 $data = mysqli_fetch_array($tampil);
-if($data)
-{
+if ($data) {
     //jika data ditemukan, maka data ditampung ke dalam variable
-   $vid = $data['id'];
-   $vtanggal = $data['tanggal'];
-   $vnama = $data['nama_kegiatan'];
-   $vgambar = $data['gambar'];
-   $vketerangan = $data['keterangan'];
- 
-   }
-
-   
-
-
-    
-       layout_header();
-       
-      
-      layout_sidebar();
-      ?>
+    $vid = $data['id'];
+    $vtanggal = $data['tanggal'];
+    $vnama = $data['nama_kegiatan'];
+    $vgambar = $data['gambar'];
+    $vketerangan = $data['keterangan'];
+}
+layout_header("Kegiatan");
+layout_sidebar();
+?>
 
 <!-- Content Wrapper. Contains page content -->
 
@@ -70,25 +60,24 @@ if($data)
                                 <th style="width: 30px">Aksi</th>
 
                             </tr>
-                            <?php 
-                                            $tampil = mysqli_query($koneksi, "SELECT * from tb_kegiatan order by id asc");
-                                            while($data = mysqli_fetch_array($tampil)) :
-                                        ?>
-                        </thead>
-                        <tbody>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $tampil = mysqli_query($koneksi, "SELECT * from tb_kegiatan order by id asc");
+                            while ($data = mysqli_fetch_array($tampil)) :
+                            ?>
                             <tr>
 
-                                <td><?=$data['tanggal']?></td>
-                                <td><?=$data['nama_kegiatan']?></td>
-                                <td><?=$data['gambar']?></td>
-                                <td><?=$data['keterangan']?></td>
-                                <td><a href="kegiatan-detail.php?id=<?=$data['id']?>" class="btn btn-warning"> <i
-                                            class="nav-icon fas fa-edit"></i></a>
+                                <td><?= $data['tanggal'] ?></td>
+                                <td><?= $data['nama_kegiatan'] ?></td>
+                                <td><?= $data['gambar'] ?></td>
+                                <td><?= $data['keterangan'] ?></td>
+                                <td><a href="kegiatan-detail.php?id=<?= $data['id'] ?>" class="btn btn-warning"> <i class="nav-icon fas fa-edit"></i></a>
 
                                 </td>
                             </tr>
                         </tbody>
-                        <?php endwhile?>
+                    <?php endwhile ?>
                     </table>
                 </div>
                 <!-- /.card-body -->
