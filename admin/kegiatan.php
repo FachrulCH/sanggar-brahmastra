@@ -60,8 +60,8 @@ layout_sidebar();
                                 <th style="width: 30px">Aksi</th>
 
                             </tr>
-                            </thead>
-                            <tbody>
+                        </thead>
+                        <tbody>
                             <?php
                             $tampil = mysqli_query($koneksi, "SELECT * from tb_kegiatan order by id asc");
                             while ($data = mysqli_fetch_array($tampil)) :
@@ -70,14 +70,16 @@ layout_sidebar();
 
                                 <td><?= $data['tanggal'] ?></td>
                                 <td><?= $data['nama_kegiatan'] ?></td>
-                                <td><?= $data['gambar'] ?></td>
+                                <td><img class="img-responsive" src="<?= $WEB_URL."/".$data['gambar'] ?>" width="100"
+                                        alt="<?= $data['nama_kegiatan'] ?>"></td>
                                 <td><?= $data['keterangan'] ?></td>
-                                <td><a href="kegiatan-detail.php?id=<?= $data['id'] ?>" class="btn btn-warning"> <i class="nav-icon fas fa-edit"></i></a>
+                                <td><a href="kegiatan-detail.php?id=<?= $data['id'] ?>" class="btn btn-warning"> <i
+                                            class="nav-icon fas fa-edit"></i></a>
 
                                 </td>
                             </tr>
                         </tbody>
-                    <?php endwhile ?>
+                        <?php endwhile ?>
                     </table>
                 </div>
                 <!-- /.card-body -->

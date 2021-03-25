@@ -30,10 +30,11 @@ if (isset($_GET['id'])){
                     <b>Foto Profile</b>
 
                     <div class="mb-3">
-                        <img src="<?= $WEB_URL . "/$guru[foto]" ?>" class="img-fluid" alt="" width="250" >
+                        <img src="<?= $WEB_URL . "/$guru[foto]" ?>" class="img-fluid" alt="" width="250">
                     </div>
                     <div class="mb-3">
-                        <button type="button" name="" id="" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
+                        <button type="button" name="" id="" class="btn btn-danger"><i class="fa fa-trash"
+                                aria-hidden="true"></i> Hapus</button>
                         <br />
                         <label for="formFile" class="form-label">Unggah foto profil</label>
                         <input class="form-control" type="file" id="formFile">
@@ -50,10 +51,12 @@ if (isset($_GET['id'])){
                     </div>
                     <div class="mb-3">
                         <label for="pengalaman" class="form-label">Pengalaman Pameran</label>
-                        <textarea class="form-control textarea" id="pengalaman" rows="3"><?= $guru['experience'] ?></textarea>
+                        <textarea class="form-control textarea" id="pengalaman"
+                            rows="3"><?= $guru['experience'] ?></textarea>
                     </div>
                     <div class="text-right">
-                    <button type="button" name="save" class="btn btn-primary pull-right"><i class="fa fa-save" aria-hidden="true"></i> Simpan</button>
+                        <button type="button" name="save" class="btn btn-primary pull-right"><i class="fa fa-save"
+                                aria-hidden="true"></i> Simpan</button>
                     </div>
                 </div>
             </div>
@@ -72,12 +75,12 @@ if (isset($_GET['id'])){
 <script src="dist/js/demo.js"></script>
 <!-- Summernote -->
 <script src="plugins/summernote/summernote-bs4.min.js"></script>
-    <script>
-        $(function () {
-            // Summernote
-            $('.textarea').summernote()
-        })
-    </script>
+<script>
+$(function() {
+    // Summernote
+    $('.textarea').summernote()
+})
+</script>
 </body>
 
 </html>
