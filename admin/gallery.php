@@ -104,18 +104,12 @@
                                 <div>
                                     <div class="filter-container p-0 row">
                                         <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
-                                            <a href="https://via.placeholder.com/1200/FFFFFF.png?text=1"
-                                                data-toggle="lightbox" data-title="sample 1 - white">
-                                                <img src="https://via.placeholder.com/300/FFFFFF?text=1"
-                                                    class="img-fluid mb-2" alt="white sample" />
-                                            </a>
+                                            <img class="img-responsive" src="../images/new folder/batu1.jpg"
+                                                width="200">
                                         </div>
                                         <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample">
-                                            <a href="https://via.placeholder.com/1200/000000.png?text=2"
-                                                data-toggle="lightbox" data-title="sample 2 - black">
-                                                <img src="https://via.placeholder.com/300/000000?text=2"
-                                                    class="img-fluid mb-2" alt="black sample" />
-                                            </a>
+                                            <img class="img-responsive" src="../images/new folder/batu2.jpg"
+                                                width="200">
                                         </div>
                                         <div class="filtr-item col-sm-2" data-category="3, 4" data-sort="red sample">
                                             <a href="https://via.placeholder.com/1200/FF0000/FFFFFF.png?text=3"
@@ -192,7 +186,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <div class="card card-primary">
                             <div class="card-header">
                                 <div class="card-title">Ekko Lightbox</div>
@@ -289,7 +283,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- /.container-fluid -->
