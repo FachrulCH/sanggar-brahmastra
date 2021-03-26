@@ -10,6 +10,7 @@ if (isset($_GET['id'])) {
 } else {
     // isi data defaultnya, kosongan
     $guru = array(
+        'id' => 0,
         'foto' => '',
         'name' => '',
         'profile' => '',
@@ -63,6 +64,12 @@ if (empty($guru['experience'])) {
                             <label for="formFile" class="form-label">Unggah foto profil</label>
                             <input class="form-control" type="file" id="formFile">
                             <br />
+                            <?php if ($guru['id'] == 0) { ?>
+                                <div class="alert alert-info" role="alert">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i> Unggah foto hanya tersedia pada mode
+                                </div>
+                                <br />
+                            <?php } else { ?>
                             <div class="row">
                                 <div class="col-md-6 text-left">
                                     <button name="simpan_foto" type="submit" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> Simpan Foto</button>
@@ -71,11 +78,13 @@ if (empty($guru['experience'])) {
                                     <button name="hapus_foto" type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus Foto</button>
                                 </div>
                             </div>
+                            <?php } ?>
                         </div>
                     </form>
                 </div>
                 <div class="col-md-8">
                     <form action="guru-simpan.php?aksi=profil" method="post">
+                        <input type="hidden" name="id" value="<?= $guru['id'] ?>">
                         <div class="mb-3">
                             <label for="name" class="form-label">Nama</label>
                             <input type="text" class="form-control" id="name" name="nama" value="<?= $guru['name'] ?>" />
@@ -90,21 +99,26 @@ if (empty($guru['experience'])) {
                         </div>
                         <div class="row">
                             <div class="col-sm-6 text-left">
-                            <button type="submit" name="save" class="btn btn-primary pull-right"><i class="fa fa-save" aria-hidden="true"></i> Simpan</button>
+                                <button type="submit" name="save" class="btn btn-primary pull-right"><i class="fa fa-save" aria-hidden="true"></i> Simpan</button>
                             </div>
                             <div class="col-sm-6 text-right">
-                                <button type="submit" name="save" class="btn btn-danger pull-right"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
+                                <a name="hapus_profil" class="btn btn-danger" href="guru-simpan.php?aksi=profil_hapus&id=<?= $guru['id'] ?>" role="button">
+                                    <i class="fa fa-trash" aria-hidden="true"></i> Hapus
+                                </a>
                             </div>
                         </div>
                 </div>
                 </form>
-                <br/>
-                <hr/>
-                <br/>
+                <br />
+                <hr />
+                <br />
             </div>
         </div>
+    </section>
 </div>
-</section>
+<?php
+footer();
+?>
 </div>
 </div>
 <!-- jQuery -->

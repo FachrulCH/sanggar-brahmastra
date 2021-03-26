@@ -142,6 +142,7 @@
                     </div>
                 </div>
             </section>
+        
         </div>
     </div>
     <!-- jQuery -->

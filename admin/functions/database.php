@@ -6,6 +6,10 @@
     return $koneksi;
  }
 
+function db_exec($sql){
+    return mysqli_query(koneksi_sanggar(), $sql);
+}
+
  function db_query($sql){
     $tampil = mysqli_query(koneksi_sanggar(), $sql);
     return mysqli_fetch_assoc($tampil);

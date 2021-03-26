@@ -1,5 +1,6 @@
 <?php
-function layout_sidebar(){
+function layout_sidebar()
+{
     $html = <<<HTML
     <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -131,8 +132,9 @@ function layout_sidebar(){
     HTML;
     echo $html;
 }
-function layout_header($page_title='Dashboard', $add_css=''){
-$header = <<<HTML
+function layout_header($page_title = 'Dashboard', $add_css = '')
+{
+    echo <<<HTML
 <!DOCTYPE html>
 <html lang="en">
 
@@ -169,5 +171,16 @@ $header = <<<HTML
             </ul>
         </nav>
 HTML;
-echo $header;
+}
+
+function footer(){
+    echo <<<HTML
+    <footer class="main-footer">
+    <strong>Copyright &copy; 2021 <a href="http://firah.id">Brahmastra</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+  HTML;
 }

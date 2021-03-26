@@ -58,6 +58,9 @@ layout_sidebar();
         </div>
     </section>
 </div>
+<?php
+        footer();
+        ?>
 </div>
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
