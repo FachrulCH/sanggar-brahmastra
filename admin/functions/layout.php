@@ -173,7 +173,8 @@ function layout_header($page_title = 'Dashboard', $add_css = '')
 HTML;
 }
 
-function footer(){
+function footer()
+{
     echo <<<HTML
     <footer class="main-footer">
     <strong>Copyright &copy; 2021 <a href="http://firah.id">Brahmastra</a>.</strong>
@@ -183,4 +184,34 @@ function footer(){
     </div>
   </footer>
   HTML;
+}
+
+function create_confirmation($btn_text, $btn_colour, $pesan, $target)
+{
+    $id_modal = rand(10,100);
+    $html = <<<HTML
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn $btn_colour" data-toggle="modal" data-target="#myModal$id_modal">$btn_text</button>
+
+    <!-- Modal -->
+    <div id="myModal$id_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Konfirmasi</h5>
+                </div>
+                <div class="modal-body">
+                    <p class="text-left">$pesan</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <a href="$target" class="btn btn-primary">Konfirmasi</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    HTML;
+    echo $html;
 }
