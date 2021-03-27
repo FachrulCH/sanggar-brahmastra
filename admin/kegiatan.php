@@ -1,5 +1,5 @@
 <?php
-include_once("functions/include_all.php");
+include_once('../functions/include_all.php');
 should_login();
 $koneksi = koneksi_sanggar();
 //tampilkan data yang akan dibuat
@@ -13,8 +13,8 @@ if ($data) {
     $vgambar = $data['gambar'];
     $vketerangan = $data['keterangan'];
 }
-layout_header("Kegiatan");
-layout_sidebar();
+admin_layout_header("Kegiatan");
+admin_layout_sidebar();
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -60,22 +60,22 @@ layout_sidebar();
                                 <th style="width: 30px">Aksi</th>
 
                             </tr>
-                            </thead>
-                            <tbody>
+                        </thead>
+                        <tbody>
                             <?php
                             $tampil = mysqli_query($koneksi, "SELECT * from tb_kegiatan order by id asc");
                             while ($data = mysqli_fetch_array($tampil)) :
                             ?>
-                            <tr>
+                                <tr>
 
-                                <td><?= $data['tanggal'] ?></td>
-                                <td><?= $data['nama_kegiatan'] ?></td>
-                                <td><?= $data['gambar'] ?></td>
-                                <td><?= $data['keterangan'] ?></td>
-                                <td><a href="kegiatan-detail.php?id=<?= $data['id'] ?>" class="btn btn-warning"> <i class="nav-icon fas fa-edit"></i></a>
+                                    <td><?= $data['tanggal'] ?></td>
+                                    <td><?= $data['nama_kegiatan'] ?></td>
+                                    <td><?= $data['gambar'] ?></td>
+                                    <td><?= $data['keterangan'] ?></td>
+                                    <td><a href="kegiatan-detail.php?id=<?= $data['id'] ?>" class="btn btn-warning"> <i class="nav-icon fas fa-edit"></i></a>
 
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
                         </tbody>
                     <?php endwhile ?>
                     </table>

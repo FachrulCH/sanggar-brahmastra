@@ -1,5 +1,5 @@
 <?php
-include_once('functions/include_all.php');
+include_once('../functions/include_all.php');
 $image_default = '/images/avatar-placeholder.png';
 
 if (@$_GET['aksi'] == 'foto_hapus') {

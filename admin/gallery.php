@@ -1,7 +1,7 @@
 <?php
-    include('functions/include_all.php');
+    include_once('../functions/include_all.php');
     should_login();
-    layout_header("Hasil Karya Siswa");
+    admin_layout_header("Hasil Karya Siswa");
     $koneksi = koneksi_sanggar();
 ?>
 
@@ -36,7 +36,7 @@
 
             <!-- Sidebar Menu -->
             <?php
-                layout_sidebar()
+                admin_layout_sidebar()
                 ?>
             <!-- /.sidebar -->
     </aside>

@@ -1,5 +1,5 @@
 <?php
-function layout_sidebar()
+function admin_layout_sidebar()
 {
     $html = <<<HTML
     <!-- Main Sidebar Container -->
@@ -132,7 +132,7 @@ function layout_sidebar()
     HTML;
     echo $html;
 }
-function layout_header($page_title = 'Dashboard', $add_css = '')
+function admin_layout_header($page_title = 'Dashboard', $add_css = '')
 {
     echo <<<HTML
 <!DOCTYPE html>
@@ -173,7 +173,7 @@ function layout_header($page_title = 'Dashboard', $add_css = '')
 HTML;
 }
 
-function footer()
+function admin_footer()
 {
     echo <<<HTML
     <footer class="main-footer">

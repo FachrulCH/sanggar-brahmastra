@@ -1,8 +1,8 @@
 <?php
-include_once("functions/include_all.php");
+include_once('../functions/include_all.php');
 should_login();
-layout_header("Guru Editor", '<link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">');
-layout_sidebar();
+admin_layout_header("Guru Editor", '<link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">');
+admin_layout_sidebar();
 if (isset($_GET['id'])) {
     // Jika ada ID di url maka masuk mode edit
     $sql = "SELECT * FROM tb_profile_guru WHERE id = $_GET[id]";
@@ -134,7 +134,7 @@ if (empty($guru['experience'])) {
     </section>
 </div>
 <?php
-footer();
+admin_footer();
 ?>
 </div>
 </div>

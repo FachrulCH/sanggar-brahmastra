@@ -1,5 +1,5 @@
 <?php
-include_once("functions/include_all.php");
+include_once('../functions/include_all.php');
 
 // Cek apakah user sudah login
 if (isset($_SESSION['name']) && $_SESSION['loggedin'] == true) {
