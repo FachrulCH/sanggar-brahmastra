@@ -55,29 +55,38 @@ if (empty($guru['experience'])) {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">
-                    <form action="guru-simpan.php?aksi=foto" method="post">
+                    <form action="guru-simpan.php?aksi=foto" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="<?= $guru['id'] ?>">
                         <h3>Foto Profile</h3>
                         <div class="mb-3">
                             <img src="<?= $WEB_URL . "/$guru[foto]" ?>" class="img-fluid" alt="" width="250">
                         </div>
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Unggah foto profil</label>
-                            <input class="form-control" type="file" id="formFile">
+                            <input class="form-control" type="file" id="formFile" name="foto_profil">
                             <br />
                             <?php if ($guru['id'] == 0) { ?>
                                 <div class="alert alert-info" role="alert">
-                                    <i class="fa fa-info-circle" aria-hidden="true"></i> Unggah foto hanya tersedia pada mode
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i> Unggah foto hanya tersedia pada edit mode
                                 </div>
                                 <br />
                             <?php } else { ?>
-                            <div class="row">
-                                <div class="col-md-6 text-left">
-                                    <button name="simpan_foto" type="submit" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> Simpan Foto</button>
+                                <div class="row">
+                                    <div class="col-md-6 text-left">
+                                        <button name="simpan_foto" type="submit" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> Simpan Foto</button>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+
+                                    <?php
+                                    create_confirmation(
+                                        '<i class="fa fa-trash" aria-hidden="true"></i> Hapus Foto',
+                                        'btn-danger',
+                                        'Yakin hapus Foto ini?',
+                                        "guru-simpan.php?aksi=foto_hapus&id=$guru[id]"
+                                    );
+                                    ?>
+                                    </div>
                                 </div>
-                                <div class="col-md-6 text-right">
-                                    <button name="hapus_foto" type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus Foto</button>
-                                </div>
-                            </div>
                             <?php } ?>
                         </div>
                     </form>
@@ -102,9 +111,17 @@ if (empty($guru['experience'])) {
                                 <button type="submit" name="save" class="btn btn-primary pull-right"><i class="fa fa-save" aria-hidden="true"></i> Simpan</button>
                             </div>
                             <div class="col-sm-6 text-right">
-                                <a name="hapus_profil" class="btn btn-danger" href="guru-simpan.php?aksi=profil_hapus&id=<?= $guru['id'] ?>" role="button">
-                                    <i class="fa fa-trash" aria-hidden="true"></i> Hapus
-                                </a>
+                                <?php
+                                // Hapus profil hanya tampil saat mengubah profil guru
+                                // data baru memiliki id = 0
+                                if ($guru['id'] != 0) {
+                                    create_confirmation(
+                                        '<i class="fa fa-trash" aria-hidden="true"></i> Hapus Profil',
+                                        'btn-danger',
+                                        'Yakin hapus profil Guru ini?',
+                                        "guru-simpan.php?aksi=profil_hapus&id=$guru[id]"
+                                    ); 
+                                } ?>
                             </div>
                         </div>
                 </div>

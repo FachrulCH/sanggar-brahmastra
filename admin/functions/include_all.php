@@ -1,10 +1,11 @@
 <?php
-require_once(__DIR__.'/variables.php');
-require_once(__DIR__.'/database.php');
-require_once(__DIR__.'/layout.php');
+require_once(__DIR__ . '/variables.php');
+require_once(__DIR__ . '/database.php');
+require_once(__DIR__ . '/layout.php');
 
 session_start();
-function should_login(){
+function should_login()
+{
     global $ADMIN_URL;
     # if not login
     if (!isset($_SESSION['name']) && $_SESSION['loggedin'] != true) {
@@ -13,8 +14,17 @@ function should_login(){
     }
 }
 
-function logout(){
+function logout()
+{
     global $ADMIN_URL;
     session_destroy(); // Hapus semua session
     header("location: $ADMIN_URL"); // Redirect ke halaman index.php
+}
+
+function redirect_to($path)
+{
+    global $ADMIN_URL;
+    $url = "$ADMIN_URL/$path";
+    header("Location: $url");
+    die();
 }
