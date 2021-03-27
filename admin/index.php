@@ -1,7 +1,7 @@
 <?php
-    include('functions/include_all.php');
-    should_login();
-    $koneksi = koneksi_sanggar();
+include_once('../functions/include_all.php');
+should_login();
+$koneksi = koneksi_sanggar();
 
 ?>
 <!DOCTYPE html>
@@ -43,8 +43,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index.html" class="brand-link">
-                <img src="dist/img/icon-sanggar-kreativitas.jpeg" alt="Sanggar Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="dist/img/icon-sanggar-kreativitas.jpeg" alt="Sanggar Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Sanggar</span>
             </a>
 
@@ -62,7 +61,7 @@
 
                 <!-- Sidebar Menu -->
                 <?php
-                layout_sidebar()
+                admin_layout_sidebar()
                 ?>
                 <!-- /.sidebar-menu -->
             </div>
@@ -86,8 +85,7 @@
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -102,8 +100,7 @@
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -118,8 +115,7 @@
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -134,15 +130,14 @@
                                 <div class="icon">
                                     <i class="ion ion-pie-graph"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
                     </div>
                 </div>
             </section>
-        
+
         </div>
     </div>
     <!-- jQuery -->

@@ -1,8 +1,8 @@
 <?php
-include_once("functions/include_all.php");
+include_once('../functions/include_all.php');
 should_login();
-layout_header();
-layout_sidebar();
+admin_layout_header();
+admin_layout_sidebar();
 ?>
 
 <!-- Content Wrapper. Contains page content -->

@@ -1,8 +1,8 @@
 <?php
-include_once("functions/include_all.php");
+include_once('../functions/include_all.php');
 should_login();
-layout_header("Profile Guru");
-layout_sidebar();
+admin_layout_header("Profile Guru");
+admin_layout_sidebar();
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -37,17 +37,15 @@ layout_sidebar();
                             <?php
                             $sql = "SELECT * from tb_profile_guru order by id asc";
                             $data = db_get_all($sql);
-                            foreach ($data as $guru){
+                            foreach ($data as $guru) {
                             ?>
-                            <tr>
-                                <td><img class="img-responsive" src="<?= $WEB_URL."/".$guru['foto'] ?>" 
-                                width="50" 
-                                alt="<?= $guru['name'] ?>"></td>
-                                <td><?= $guru['name'] ?></td>
-                                <td><a href="guru-editor.php?id=<?= $guru['id'] ?>" class="btn btn-warning"> <i class="nav-icon fas fa-edit"></i></a>
-                                </td>
-                            </tr>
-                            <?php 
+                                <tr>
+                                    <td><img class="img-responsive" src="<?= $WEB_URL . "/" . $guru['foto'] ?>" width="50" alt="<?= $guru['name'] ?>"></td>
+                                    <td><?= $guru['name'] ?></td>
+                                    <td><a href="guru-editor.php?id=<?= $guru['id'] ?>" class="btn btn-warning"> <i class="nav-icon fas fa-edit"></i></a>
+                                    </td>
+                                </tr>
+                            <?php
                             } //end loop
                             ?>
                         </tbody>
@@ -59,8 +57,8 @@ layout_sidebar();
     </section>
 </div>
 <?php
-        footer();
-        ?>
+admin_footer();
+?>
 </div>
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
