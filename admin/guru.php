@@ -40,7 +40,7 @@ admin_layout_sidebar();
                             foreach ($data as $guru) {
                             ?>
                                 <tr>
-                                    <td><img class="img-responsive" src="<?= $WEB_URL . "/" . $guru['foto'] ?>" width="50" alt="<?= $guru['name'] ?>"></td>
+                                    <td><img class="img-responsive" src="<?= $WEB_URL . $guru['foto'] ?>" width="50" alt="<?= $guru['name'] ?>"></td>
                                     <td><?= $guru['name'] ?></td>
                                     <td><a href="guru-editor.php?id=<?= $guru['id'] ?>" class="btn btn-warning"> <i class="nav-icon fas fa-edit"></i></a>
                                     </td>

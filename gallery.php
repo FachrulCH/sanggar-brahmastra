@@ -1,15 +1,21 @@
 <?php
 require_once('functions/include_all.php');
-$sql = "SELECT * from tb_profile_guru order by id asc";
-$data_guru = db_get_all($sql);
+if (isset($_GET['id'])) {
+    // Jika ada ID di url maka masuk mode edit
+    $sql = "SELECT * FROM tb_profile_guru WHERE id = $_GET[id]";
+    $guru = db_query($sql);
+    $sql_karya = "SELECT * FROM `tb_karya_guru` WHERE id_guru = $_GET[id]";
+    $daftar_karya = db_get_all($sql_karya);
+}
 ?>
+
 <!DOCTYPE HTML>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BRAHMASTRA ART &mdash; Guru</title>
+    <title>BRAHMASTRA ART &mdash; Gallery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
     <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -72,7 +78,8 @@ $data_guru = db_get_all($sql);
     <!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+<!-- Ekko Lightbox -->
+<link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css" />
 </head>
 
 <body>
@@ -105,10 +112,10 @@ $data_guru = db_get_all($sql);
                         <div class="col-xs-10 text-right menu-1">
                             <ul>
                                 <li><a href="index.html">Home</a></li>
-                                <li><a href="kelas.html">Kelas</a></li>
-                                <li class="active"><a href="teacher-profil.html">Guru</a></li>
+                                <li><a href="kelas.html">Courses</a></li>
+                                <li><a href="teacher-profil.html">Guru</a></li>
                                 <li><a href="kegiatan.html">Kegiatan</a></li>
-                                <li><a href="gallery.html">Gallery</a></li>
+                                <li class="active"><a href="gallery.html">Gallery</a></li>
                                 <li class="btn-cta"><a href="contact.html"><span>Daftar</span></a></li>
 
                             </ul>
@@ -122,13 +129,13 @@ $data_guru = db_get_all($sql);
         <aside id="fh5co-hero">
             <div class="flexslider">
                 <ul class="slides">
-                    <li style="background-image: url(images/guru.jpeg);">
+                    <li style="background-image: url(images/img_bg_4.jpg);">
                         <div class="overlay-gradient"></div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2 text-center slider-text">
                                     <div class="slider-text-inner">
-                                        <h1 class="heading-section">Instruktur</h1>
+                                        <h1 class="heading-section">Events &amp; Agenda</h1>
                                         <h2>Brahmastra Art</h2>
                                     </div>
                                 </div>
@@ -139,46 +146,48 @@ $data_guru = db_get_all($sql);
             </div>
         </aside>
 
-        <div id="fh5co-staff">
+        <div id="fh5co-blog">
             <div class="container">
                 <?php
-                foreach ($data_guru as $guru) {
+                if (empty($daftar_karya)) {
+                    echo '<div class="alert alert-warning" role="alert"><i class="fa fa-info-circle" aria-hidden="true"></i> Belum ada karya guru</div>';
+                } else {
+
                 ?>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="staff">
-                                <div class="card-body">
-                                    <h1 class="card-title"><?= $guru['name'] ?></h1>
-                                    <img class="img-responsive" src="<?= $guru['foto'] ?>" width="300" height="300" alt="<?= $guru['name'] ?>">
-                                    <br>
-                                    <?= $guru['profile'] ?>
+                        <?php
+                        foreach ($daftar_karya as $karya) {
+                        ?>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="fh5co-blog">
+                                    <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>);"  data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>"></a>
+                                    <div class="blog-text">
+                                        <h3><a href="#"><?= $karya['judul_karya'] ?></a></h3>
+                                        <span class="posted_on"><?= $karya['tanggal'] ?></span>
+                                        <p><?= $karya['keterangan'] ?></p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <?= $guru['experience'] ?>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3 class="card-title">Hasil Karya</h3>
-<<<<<<< HEAD
-                                    <a href="#" class="btn btn-primary">Lihat Karya</a>
-=======
-                                    <a href="gallery.php?id=<?= $guru['id'] ?>" class="btn btn-primary">Lihat Karya</a>
->>>>>>> e58c188168effab89a52441b379eaa64085f1ff7
-                                </div>
-                            </div>
-                        </div>
+                        <?php } ?>
                     </div>
-                <?php
-                } //end loop
-                ?>
+                <?php } ?>
             </div>
         </div>
 
+        <div id="fh5co-register" style="background-image: url(images/img_bg_2.jpg);">
+            <div class="overlay"></div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 animate-box">
+                    <div class="date-counter text-center">
+                        <h2>Get 400 of Online Courses for Free</h2>
+                        <h3>By Mike Smith</h3>
+                        <div class="simply-countdown simply-countdown-one"></div>
+                        <p><strong>Limited Offer, Hurry Up!</strong></p>
+                        <p><a href="#" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
             <div class="overlay"></div>
@@ -272,22 +281,16 @@ $data_guru = db_get_all($sql);
     <script src="js/simplyCountdown.js"></script>
     <!-- Main -->
     <script src="js/main.js"></script>
+    <!-- Ekko Lightbox -->
+    <script src="plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
     <script>
-        var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
-
-        // default example
-        simplyCountdown('.simply-countdown-one', {
-            year: d.getFullYear(),
-            month: d.getMonth() + 1,
-            day: d.getDate()
-        });
-
-        //jQuery example
-        $('#simply-countdown-losange').simplyCountdown({
-            year: d.getFullYear(),
-            month: d.getMonth() + 1,
-            day: d.getDate(),
-            enableUtc: false
+        $(function() {
+            $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox({
+                    alwaysShowClose: true,
+                });
+            });
         });
     </script>
 </body>
