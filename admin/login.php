@@ -55,7 +55,7 @@ if (isset($_POST['email'])) {
 
                 <form action="<?= $ADMIN_URL . "/login.php" ?>" method="post" name="login_attempt">
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email" name="email">
+                        <input type="email" class="form-control" placeholder="Email" name="email" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -63,7 +63,7 @@ if (isset($_POST['email'])) {
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password" name="password">
+                        <input type="password" class="form-control" placeholder="Password" name="password" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -76,9 +76,25 @@ if (isset($_POST['email'])) {
                         <!-- /.col -->
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+                            <br />
                         </div>
                         <!-- /.col -->
                     </div>
+                    <?php
+                    if (isset($_POST['email']) && empty($data_admin)) {
+                    ?>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                    </button>
+                                    <strong>Gagal Login!</strong> Harap periksa kembali email/password anda dengan benar
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </form>
 
                 <!-- <p class="mb-1">
