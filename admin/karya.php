@@ -52,8 +52,8 @@ if (isset($_GET['id'])) {
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-4">
-                                        <a href="<?= $WEB_URL . "/" . $karya['foto'] ?>" data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>">
-                                            <img src="<?= $WEB_URL . "/" . $karya['foto'] ?>" width="190">
+                                        <a href="<?= $WEB_URL . $karya['foto'] ?>" data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>">
+                                            <img src="<?= $WEB_URL . $karya['foto'] ?>" width="190">
                                         </a>
                                     </div>
                                     <div class="col-md-8">
