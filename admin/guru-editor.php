@@ -59,11 +59,11 @@ if (empty($guru['experience'])) {
                         <input type="hidden" name="id" value="<?= $guru['id'] ?>">
                         <h3>Foto Profile</h3>
                         <div class="mb-3">
-                            <img src="<?= $WEB_URL . "/$guru[foto]" ?>" class="img-fluid" alt="" width="250">
+                            <img src="<?= $WEB_URL . "/$guru[foto]" ?>" class="img-fluid" alt="" width="250" id="output">
                         </div>
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Unggah foto profil</label>
-                            <input class="form-control" type="file" id="formFile" name="foto_profil">
+                            <input class="form-control" type="file" accept="image/*" id="formFile" name="foto_profil" onchange="loadFile(event)">
                             <br />
                             <?php if ($guru['id'] == 0) { ?>
                                 <div class="alert alert-info" role="alert">
@@ -77,14 +77,14 @@ if (empty($guru['experience'])) {
                                     </div>
                                     <div class="col-md-6 text-right">
 
-                                    <?php
-                                    create_confirmation(
-                                        '<i class="fa fa-trash" aria-hidden="true"></i> Hapus Foto',
-                                        'btn-danger',
-                                        'Yakin hapus Foto ini?',
-                                        "guru-simpan.php?aksi=foto_hapus&id=$guru[id]"
-                                    );
-                                    ?>
+                                        <?php
+                                        create_confirmation(
+                                            '<i class="fa fa-trash" aria-hidden="true"></i> Hapus Foto',
+                                            'btn-danger',
+                                            'Yakin hapus Foto ini?',
+                                            "guru-simpan.php?aksi=foto_hapus&id=$guru[id]"
+                                        );
+                                        ?>
                                     </div>
                                 </div>
                             <?php } ?>
@@ -121,7 +121,7 @@ if (empty($guru['experience'])) {
                                         'btn-danger',
                                         'Yakin hapus profil Guru ini?',
                                         "guru-simpan.php?aksi=profil_hapus&id=$guru[id]"
-                                    ); 
+                                    );
                                 } ?>
                             </div>
                         </div>
@@ -154,6 +154,15 @@ admin_footer();
         // Summernote
         $('.textarea').summernote()
     })
+
+    var loadFile = function(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('output');
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    };
 </script>
 </body>
 
