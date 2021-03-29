@@ -164,11 +164,7 @@ $data_guru = db_get_all($sql);
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="card-title">Hasil Karya</h3>
-<<<<<<< HEAD
-                                    <a href="#" class="btn btn-primary">Lihat Karya</a>
-=======
                                     <a href="gallery.php?id=<?= $guru['id'] ?>" class="btn btn-primary">Lihat Karya</a>
->>>>>>> e58c188168effab89a52441b379eaa64085f1ff7
                                 </div>
                             </div>
                         </div>

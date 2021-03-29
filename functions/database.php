@@ -27,6 +27,7 @@ function db_query($sql)
 function db_get_all($sql)
 {
     $tampil = mysqli_query(koneksi_sanggar(), $sql);
+    $return = [];
     while ($row = mysqli_fetch_assoc($tampil)) {
         $return[] = $row;
     }
