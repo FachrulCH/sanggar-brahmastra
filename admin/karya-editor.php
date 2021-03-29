@@ -4,11 +4,11 @@ should_login();
 admin_layout_header('Karya');
 admin_layout_sidebar();
 
-if (isset($_GET['id'])){
+if (isset($_GET['id'])) {
     // load data karya jika edit
     $sql = "SELECT * FROM tb_karya_guru WHERE id = $_GET[id]";
     $karya = db_query($sql);
-}else{
+} else {
     $karya = array(
         'judul_karya' => '',
         'keterangan' => '',
@@ -61,7 +61,7 @@ if (isset($_GET['id'])){
                 <div class="form-group row">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-10">
-                        <img src="<?= $WEB_URL . '/'.$karya['foto']?>" width="200" id="output">
+                        <img src="<?= $WEB_URL . $karya['foto'] ?>" width="200" id="output">
                     </div>
                 </div>
                 <div class="form-group row">

@@ -59,7 +59,7 @@ if (empty($guru['experience'])) {
                         <input type="hidden" name="id" value="<?= $guru['id'] ?>">
                         <h3>Foto Profile</h3>
                         <div class="mb-3">
-                            <img src="<?= $WEB_URL . "/$guru[foto]" ?>" class="img-fluid" alt="" width="250" id="output">
+                            <img src="<?= $WEB_URL . $guru['foto'] ?>" class="img-fluid" alt="" width="250" id="output">
                         </div>
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Unggah foto profil</label>
