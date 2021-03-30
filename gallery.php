@@ -3,10 +3,12 @@ require_once('functions/include_all.php');
 if (isset($_GET['id'])) {
     // Jika ada ID di url maka masuk mode edit
     $sql = "SELECT * FROM tb_profile_guru WHERE id = $_GET[id]";
-    $guru = db_query($sql);
-    $sql_karya = "SELECT * FROM `tb_karya_guru` WHERE id_guru = $_GET[id]";
-    $daftar_karya = db_get_all($sql_karya);
+}else{
+    $sql = "SELECT * FROM tb_profile_guru";
 }
+$guru = db_query($sql);
+$sql_karya = "SELECT * FROM `tb_karya_guru` WHERE id_guru = $_GET[id]";
+$daftar_karya = db_get_all($sql_karya);
 ?>
 
 <!DOCTYPE HTML>
@@ -78,8 +80,8 @@ if (isset($_GET['id'])) {
     <!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-<!-- Ekko Lightbox -->
-<link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css" />
+    <!-- Ekko Lightbox -->
+    <link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css" />
 </head>
 
 <body>
@@ -160,7 +162,7 @@ if (isset($_GET['id'])) {
                         ?>
                             <div class="col-lg-4 col-md-4">
                                 <div class="fh5co-blog">
-                                    <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>);"  data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>"></a>
+                                    <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>);" data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>"></a>
                                     <div class="blog-text">
                                         <h3><a href="#"><?= $karya['judul_karya'] ?></a></h3>
                                         <span class="posted_on"><?= $karya['tanggal'] ?></span>

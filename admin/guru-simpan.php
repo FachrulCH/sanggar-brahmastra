@@ -1,7 +1,7 @@
 <?php
 include_once('../functions/include_all.php');
 $image_default = '/images/avatar-placeholder.png';
-
+echo "<pre>";
 if (@$_GET['aksi'] == 'foto_hapus') {
     if (isset($_GET['id'])) {
         $sql_simpan_foto = "UPDATE tb_profile_guru SET foto = '$image_default' WHERE id = $_GET[id]";
@@ -27,11 +27,11 @@ if ($_GET['aksi'] == 'profil_hapus') {
 if ($_GET['aksi'] == 'foto') {
     if (isset($_POST['simpan_foto'])) {
         echo "foto disimpan";
-        echo "<pre>";
+        
         echo trim(shell_exec('whoami'));
         print_r($_POST);
         print_r($_FILES);
-        echo "</pre>";
+        
         // ambil data file
         $namaFile = $_FILES['foto_profil']['name'];
         $namaSementara = $_FILES['foto_profil']['tmp_name'];
@@ -64,13 +64,7 @@ if ($_GET['aksi'] == 'profil') {
     echo "Simpan profil";
     // print_r($_POST);
     if ($_POST['id'] != 0) {
-        $sql = <<<SQL
-        UPDATE tb_profile_guru 
-            SET name = $_POST[nama]
-            SET profile = $_POST[biodata]
-            SET experience = $_POST[pengalaman]
-        WHERE id = $_POST[id]
-        SQL;
+        $sql = "UPDATE tb_profile_guru SET name = '$_POST[nama]', profile = '$_POST[biodata]', experience = '$_POST[pengalaman]' WHERE id = $_POST[id]";
     } else {
         $sql = <<<SQL
         INSERT INTO `tb_profile_guru` (`id`, `name`, `profile`, `experience`, `foto`) 
@@ -84,3 +78,4 @@ if ($_GET['aksi'] == 'profil') {
         redirect_to('guru.php');
     }
 }
+echo "</pre>";

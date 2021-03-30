@@ -1,6 +1,7 @@
 <?php
 function admin_layout_sidebar()
 {
+    global $WEB_URL;
     $html = <<<HTML
     <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -8,7 +9,7 @@ function admin_layout_sidebar()
             <a href="index.html" class="brand-link">
                 <img src="dist/img/icon-sanggar-kreativitas.jpeg" alt="Sanggar Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Sanggar</span>
+                <span class="brand-text font-weight-light">Sanggar Brahmastra</span>
             </a>
 
             <!-- Sidebar -->
@@ -16,7 +17,7 @@ function admin_layout_sidebar()
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="dist/img/user7-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="$WEB_URL/images/avatar-placeholder.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">$_SESSION[name]</a>
@@ -51,7 +52,6 @@ function admin_layout_sidebar()
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
                                     Kegiatan
-                                    <span class="badge badge-info right">2</span>
                                 </p>
                             </a>
                         </li>

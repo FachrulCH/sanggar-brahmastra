@@ -27,7 +27,7 @@ admin_layout_sidebar();
             <div class="row">
                 <div class="col-md-1">
                     <br />
-                    <a href="articles-editor.html" class="btn btn-primary">Tambah</a>
+                    <a href="kegiatan-editor.php" class="btn btn-primary">Tambah</a>
                     <br />
                     <br />
                 </div>
@@ -37,7 +37,7 @@ admin_layout_sidebar();
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Daftar Kegiatan</h3>
-                    <div class="card-tools">
+                    <!-- <div class="card-tools">
                         <ul class="pagination pagination-sm float-right">
                             <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
                             <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -45,7 +45,7 @@ admin_layout_sidebar();
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body p-0">
@@ -70,9 +70,9 @@ admin_layout_sidebar();
 
                                     <td><?= $data['tanggal'] ?></td>
                                     <td><?= $data['nama_kegiatan'] ?></td>
-                                    <td><?= $data['gambar'] ?></td>
-                                    <td><?= $data['keterangan'] ?></td>
-                                    <td><a href="kegiatan-detail.php?id=<?= $data['id'] ?>" class="btn btn-warning"> <i class="nav-icon fas fa-edit"></i></a>
+                                    <td><img src="<?= $WEB_URL . $data['gambar'] ?>" width="50"></td>
+                                    <td><?= substr(strip_tags($data['keterangan']), 0, 50) . "..." ?></td>
+                                    <td><a href="kegiatan-editor.php?id=<?= $data['id'] ?>" class="btn btn-warning"> <i class="nav-icon fas fa-edit"></i></a>
 
                                     </td>
                                 </tr>
