@@ -56,7 +56,7 @@ function admin_layout_sidebar()
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="gallery.php" class="nav-link">
+                            <a href="galeri-karya.php" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Gallery
