@@ -149,17 +149,29 @@ $daftar_kegiatan = db_get_all($sql);
                     </div>
                 </div>
                 <div class="row row-padded-mb">
-                    <?php 
+                    <?php
                     foreach ($daftar_kegiatan as $kegiatan) {
                     ?>
-                    <div class="col-md-6 animate-box">
-                        <div class="fh5co-event">
-                            <div class="date text-center"><span><?= $kegiatan['tanggal'] ?></span></div>
-                            <h3><a href="#"><?= $kegiatan['nama_kegiatan'] ?></a></h3>
-                            <p><?= substr(strip_tags($kegiatan['keterangan']), 0, 150) . "..." ?></p>
-                            <p><a href="#">Selengkapnya</a></p>
+                        <!-- <div class="col-md-6 animate-box">
+                            <div class="fh5co-event">
+                                <div class="date text-center"><span><?= $kegiatan['tanggal'] ?></span></div>
+                                <h3><a href="#"><?= $kegiatan['nama_kegiatan'] ?></a></h3>
+                                <p><?= substr(strip_tags($kegiatan['keterangan']), 0, 150) . "..." ?></p>
+                                <p><a href="#">Selengkapnya</a></p>
+                            </div>
+                        </div> -->
+
+                        <div class="col-lg-4 col-md-4">
+                            <div class="fh5co-blog">
+                                <a href="#" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $kegiatan['gambar'] ?>);"></a>
+                                <div class="blog-text">
+                                    <h3><a href="#"><?= $kegiatan['nama_kegiatan'] ?></a></h3>
+                                    <span class="posted_on"><?= $kegiatan['tanggal'] ?></span>
+                                    <p><?= substr(strip_tags($kegiatan['keterangan']), 0, 150) . "..." ?></p>
+                                    <p><a href="kegiatan-detail.php?id=<?= $kegiatan['id'] ?>">Selengkapnya</a></p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
                     <?php
                     }
                     ?>
