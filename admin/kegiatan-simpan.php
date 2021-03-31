@@ -18,9 +18,7 @@ if ($terupload) {
     die();
 }
 
-echo "<pre>";
-print_r($_POST);
-print_r($_FILES);
+
 
 // jika sebelumnya memiliki id kegiatan, maka ini adalah mode edit
 if ($_POST['id_kegiatan'] != 0) {
@@ -33,6 +31,9 @@ if (db_exec($sql_simpan)) {
     echo "kegiatan berhasil tersimpan";
     redirect_to('kegiatan.php');
 } else {
+    echo "<pre>";
+    print_r($_POST);
+    print_r($_FILES);
     echo "kegiatan gagal tersimpan";
+    echo "</pre>";
 }
-echo "</pre>";
