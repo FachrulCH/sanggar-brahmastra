@@ -1,16 +1,7 @@
 <?php
 require_once('functions/include_all.php');
-if (!empty(@$_GET['id'])) {
-    // Jika ada ID di url maka masuk mode edit
-    $sql = "SELECT * FROM tb_profile_guru WHERE id = $_GET[id]";
-    $sql_karya = "SELECT * FROM `tb_karya_guru` WHERE id_guru = $_GET[id]";
-}else{
-    $sql = "SELECT * FROM tb_profile_guru";
-    $sql_karya = "SELECT * FROM `tb_karya_guru`";
-    
-}
-$guru = db_query($sql);
-$daftar_karya = db_get_all($sql_karya);
+$sql = "SELECT * FROM tb_kegiatan";
+$daftar_kegiatan = db_get_all($sql);
 ?>
 
 <!DOCTYPE HTML>
@@ -19,7 +10,7 @@ $daftar_karya = db_get_all($sql_karya);
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BRAHMASTRA ART &mdash; Gallery</title>
+    <title>BRAHMASTRA ART &mdash; Kegiatan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
     <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -82,8 +73,7 @@ $daftar_karya = db_get_all($sql_karya);
     <!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-    <!-- Ekko Lightbox -->
-    <link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css" />
+
 </head>
 
 <body>
@@ -116,10 +106,10 @@ $daftar_karya = db_get_all($sql_karya);
                         <div class="col-xs-10 text-right menu-1">
                             <ul>
                                 <li><a href="index.html">Home</a></li>
-                                <li><a href="kelas.html">Courses</a></li>
+                                <li><a href="kelas.html">Kelas</a></li>
                                 <li><a href="teacher-profil.html">Guru</a></li>
-                                <li><a href="kegiatan.html">Kegiatan</a></li>
-                                <li class="active"><a href="gallery.html">Gallery</a></li>
+                                <li class="active"><a href="kegiatan.html">Kegiatan</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
                                 <li class="btn-cta"><a href="contact.html"><span>Daftar</span></a></li>
 
                             </ul>
@@ -139,7 +129,7 @@ $daftar_karya = db_get_all($sql_karya);
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2 text-center slider-text">
                                     <div class="slider-text-inner">
-                                        <h1 class="heading-section">Galeri Karya</h1>
+                                        <h1 class="heading-section">Events &amp; Agenda</h1>
                                         <h2>Brahmastra Art</h2>
                                     </div>
                                 </div>
@@ -152,46 +142,33 @@ $daftar_karya = db_get_all($sql_karya);
 
         <div id="fh5co-blog">
             <div class="container">
-                <?php
-                if (empty($daftar_karya)) {
-                    echo '<div class="alert alert-warning" role="alert"><i class="fa fa-info-circle" aria-hidden="true"></i> Belum ada karya guru</div>';
-                } else {
-
-                ?>
-                    <div class="row">
-                        <?php
-                        foreach ($daftar_karya as $karya) {
-                        ?>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="fh5co-blog">
-                                    <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>);" data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>"></a>
-                                    <div class="blog-text">
-                                        <h3><a href="#"><?= $karya['judul_karya'] ?></a></h3>
-                                        <span class="posted_on"><?= $karya['tanggal'] ?></span>
-                                        <p><?= $karya['keterangan'] ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php } ?>
-                    </div>
-                <?php } ?>
-            </div>
-        </div>
-
-        <div id="fh5co-register" style="background-image: url(images/img_bg_2.jpg);">
-            <div class="overlay"></div>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 animate-box">
-                    <div class="date-counter text-center">
-                        <h2>Get 400 of Online Courses for Free</h2>
-                        <h3>By Mike Smith</h3>
-                        <div class="simply-countdown simply-countdown-one"></div>
-                        <p><strong>Limited Offer, Hurry Up!</strong></p>
-                        <p><a href="#" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>Events &amp; Agenda</h2>
+                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
                     </div>
                 </div>
+                <div class="row row-padded-mb">
+                    <?php 
+                    foreach ($daftar_kegiatan as $kegiatan) {
+                    ?>
+                    <div class="col-md-6 animate-box">
+                        <div class="fh5co-event">
+                            <div class="date text-center"><span><?= $kegiatan['tanggal'] ?></span></div>
+                            <h3><a href="#"><?= $kegiatan['nama_kegiatan'] ?></a></h3>
+                            <p><?= substr(strip_tags($kegiatan['keterangan']), 0, 150) . "..." ?></p>
+                            <p><a href="#">Selengkapnya</a></p>
+                        </div>
+                    </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+
             </div>
         </div>
+
+
 
         <footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
             <div class="overlay"></div>
@@ -285,16 +262,22 @@ $daftar_karya = db_get_all($sql_karya);
     <script src="js/simplyCountdown.js"></script>
     <!-- Main -->
     <script src="js/main.js"></script>
-    <!-- Ekko Lightbox -->
-    <script src="plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
     <script>
-        $(function() {
-            $(document).on("click", '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox({
-                    alwaysShowClose: true,
-                });
-            });
+        var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
+
+        // default example
+        simplyCountdown('.simply-countdown-one', {
+            year: d.getFullYear(),
+            month: d.getMonth() + 1,
+            day: d.getDate()
+        });
+
+        //jQuery example
+        $('#simply-countdown-losange').simplyCountdown({
+            year: d.getFullYear(),
+            month: d.getMonth() + 1,
+            day: d.getDate(),
+            enableUtc: false
         });
     </script>
 </body>
