@@ -1,130 +1,27 @@
 <?php
 require_once('functions/include_all.php');
-if (isset($_GET['id'])) {
+if (!empty(@$_GET['id'])) {
     // Jika ada ID di url maka masuk mode edit
     $sql = "SELECT * FROM tb_profile_guru WHERE id = $_GET[id]";
-    $guru = db_query($sql);
     $sql_karya = "SELECT * FROM `tb_karya_guru` WHERE id_guru = $_GET[id]";
-    $daftar_karya = db_get_all($sql_karya);
+}else{
+    $sql = "SELECT * FROM tb_profile_guru";
+    $sql_karya = "SELECT * FROM `tb_karya_guru`";
+    
 }
+$guru = db_query($sql);
+$daftar_karya = db_get_all($sql_karya);
+layout_header();
 ?>
 
-<!DOCTYPE HTML>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BRAHMASTRA ART &mdash; Gallery</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-    <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-    <meta name="author" content="freehtml5.co" />
-
-    <!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:description" content="" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
-
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-    <!-- Flexslider  -->
-    <link rel="stylesheet" href="css/flexslider.css">
-
-    <!-- Pricing -->
-    <link rel="stylesheet" href="css/pricing.css">
-
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
 <!-- Ekko Lightbox -->
 <link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css" />
-</head>
-
 <body>
 
     <div class="fh5co-loader"></div>
 
     <div id="page">
-        <nav class="fh5co-nav" role="navigation">
-            <div class="top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 text-right">
-                            <p class="site">brahmastraart.com</p>
-                            <ul class="fh5co-social">
-                                <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                                <li><a href="#"><i class="icon-twitter2"></i></a></li>
-                                <li><a href="#"><i class="icon-dribbble2"></i></a></li>
-                                <li><a href="#"><i class="icon-github"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="top-menu">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-2">
-                            <div id="fh5co-logo"><a href="index.html"><i class="icon-palette"></i>Brahmastra Art<span>.</span></a></div>
-                        </div>
-                        <div class="col-xs-10 text-right menu-1">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="kelas.html">Courses</a></li>
-                                <li><a href="teacher-profil.html">Guru</a></li>
-                                <li><a href="kegiatan.html">Kegiatan</a></li>
-                                <li class="active"><a href="gallery.html">Gallery</a></li>
-                                <li class="btn-cta"><a href="contact.html"><span>Daftar</span></a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </nav>
+    <?php layout_navigation(); ?>
 
         <aside id="fh5co-hero">
             <div class="flexslider">
@@ -135,7 +32,7 @@ if (isset($_GET['id'])) {
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2 text-center slider-text">
                                     <div class="slider-text-inner">
-                                        <h1 class="heading-section">Events &amp; Agenda</h1>
+                                        <h1 class="heading-section">Galeri Karya</h1>
                                         <h2>Brahmastra Art</h2>
                                     </div>
                                 </div>
@@ -160,7 +57,7 @@ if (isset($_GET['id'])) {
                         ?>
                             <div class="col-lg-4 col-md-4">
                                 <div class="fh5co-blog">
-                                    <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>);"  data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>"></a>
+                                    <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>);" data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>"></a>
                                     <div class="blog-text">
                                         <h3><a href="#"><?= $karya['judul_karya'] ?></a></h3>
                                         <span class="posted_on"><?= $karya['tanggal'] ?></span>
