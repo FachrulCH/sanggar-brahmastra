@@ -12,7 +12,8 @@ $data_guru = db_get_all($sql);
     <title>BRAHMASTRA ART &mdash; Guru</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-    <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="keywords"
+        content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
     <meta name="author" content="freehtml5.co" />
 
     <!-- 
@@ -100,16 +101,18 @@ $data_guru = db_get_all($sql);
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-2">
-                            <div id="fh5co-logo"><a href="index.html"><i class="icon-palette"></i>Brahmastra Art<span>.</span></a></div>
+                            <div id="fh5co-logo"><a href="index.html"><i class="icon-palette"></i>Brahmastra
+                                    Art<span>.</span></a></div>
                         </div>
                         <div class="col-xs-10 text-right menu-1">
                             <ul>
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="kelas.html">Kelas</a></li>
-                                <li class="active"><a href="teacher-profil.html">Guru</a></li>
+                                <li class="active"><a href="guru.php">Guru</a></li>
                                 <li><a href="kegiatan.html">Kegiatan</a></li>
                                 <li><a href="gallery.html">Gallery</a></li>
-                                <li class="btn-cta"><a href="contact.html"><span>Daftar</span></a></li>
+                                <li class="btn-cta">
+                                    <a href="contact.html"><span>Daftar</span></a>
 
                             </ul>
                         </div>
@@ -144,31 +147,32 @@ $data_guru = db_get_all($sql);
                 <?php
                 foreach ($data_guru as $guru) {
                 ?>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="staff">
-                                <div class="card-body">
-                                    <h1 class="card-title"><?= $guru['name'] ?></h1>
-                                    <img class="img-responsive" src="<?= $guru['foto'] ?>" width="300" height="300" alt="<?= $guru['name'] ?>">
-                                    <br>
-                                    <?= $guru['profile'] ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <?= $guru['experience'] ?>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3 class="card-title">Hasil Karya</h3>
-                                    <a href="gallery.php?id=<?= $guru['id'] ?>" class="btn btn-primary">Lihat Karya</a>
-                                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="staff">
+                            <div class="card-body">
+                                <h1 class="card-title"><?= $guru['name'] ?></h1>
+                                <img class="img-responsive" src="<?= $guru['foto'] ?>" width="300" height="300"
+                                    alt="<?= $guru['name'] ?>">
+                                <br>
+                                <?= $guru['profile'] ?>
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <?= $guru['experience'] ?>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Hasil Karya</h3>
+                                <a href="gallery.php?id=<?= $guru['id'] ?>" class="btn btn-primary">Lihat Karya</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <?php
                 } //end loop
                 ?>
@@ -182,7 +186,8 @@ $data_guru = db_get_all($sql);
                 <div class="row row-pb-md">
                     <div class="col-md-3 fh5co-widget">
                         <h3>About Education</h3>
-                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta
+                            adipisci architecto culpa amet.</p>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
                         <h3>Learning</h3>
@@ -269,22 +274,22 @@ $data_guru = db_get_all($sql);
     <!-- Main -->
     <script src="js/main.js"></script>
     <script>
-        var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
+    var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 
-        // default example
-        simplyCountdown('.simply-countdown-one', {
-            year: d.getFullYear(),
-            month: d.getMonth() + 1,
-            day: d.getDate()
-        });
+    // default example
+    simplyCountdown('.simply-countdown-one', {
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate()
+    });
 
-        //jQuery example
-        $('#simply-countdown-losange').simplyCountdown({
-            year: d.getFullYear(),
-            month: d.getMonth() + 1,
-            day: d.getDate(),
-            enableUtc: false
-        });
+    //jQuery example
+    $('#simply-countdown-losange').simplyCountdown({
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate(),
+        enableUtc: false
+    });
     </script>
 </body>
 

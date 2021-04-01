@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Waktu pembuatan: 29 Mar 2021 pada 10.53
--- Versi server: 10.4.17-MariaDB
--- Versi PHP: 7.4.12
+-- Host: 127.0.0.1
+-- Generation Time: Apr 01, 2021 at 07:06 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_admins`
+-- Table structure for table `tb_admins`
 --
 
 CREATE TABLE `tb_admins` (
@@ -36,7 +36,7 @@ CREATE TABLE `tb_admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_admins`
+-- Dumping data for table `tb_admins`
 --
 
 INSERT INTO `tb_admins` (`id`, `email`, `password`, `name`, `last_login`) VALUES
@@ -45,7 +45,27 @@ INSERT INTO `tb_admins` (`id`, `email`, `password`, `name`, `last_login`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_karya_guru`
+-- Table structure for table `tb_hasil_karya`
+--
+
+CREATE TABLE `tb_hasil_karya` (
+  `id_hasil` int(6) NOT NULL,
+  `nama_siswa` varchar(50) NOT NULL,
+  `judul_karya_siswa` varchar(100) NOT NULL,
+  `karya_siswa` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_hasil_karya`
+--
+
+INSERT INTO `tb_hasil_karya` (`id_hasil`, `nama_siswa`, `judul_karya_siswa`, `karya_siswa`) VALUES
+(1, 'Irene', 'perahu', 'images/karyasiswa/irene.jpeg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_karya_guru`
 --
 
 CREATE TABLE `tb_karya_guru` (
@@ -58,21 +78,34 @@ CREATE TABLE `tb_karya_guru` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_karya_guru`
+-- Dumping data for table `tb_karya_guru`
 --
 
 INSERT INTO `tb_karya_guru` (`id`, `id_guru`, `judul_karya`, `keterangan`, `tanggal`, `foto`) VALUES
 (2, 7, 'Team of the Year', 'team of the year\r\nCurabitur aliquet quam id dui posuere blandit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.\r\nCurabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget malesuada.', '2021-01-01', 'karya/guru/toty.jpeg'),
-(3, 1, 'Kegiatan Belajar', 'Kegiatan belajar siswa bimbingan', '2021-03-01', 'karya/guru/collage3.png'),
+(3, 1, 'Karya 1', 'pantai', '2021-03-01', 'karya/guru/pakherman_1.jpeg'),
 (4, 7, 'Python logo', 'gambar logo python programming\r\nVestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec sollicitudin molestie malesuada.', '2021-03-03', 'karya/guru/python.png'),
 (5, 7, 'Animasi Simpson', 'Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada.\r\n\r\nCurabitur aliquet quam id dui posuere blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n\r\nSed porttitor lectus nibh. Pellentesque in ipsum id orci porta dapibus.\r\n\r\nNulla porttitor accumsan tincidunt. Vivamus suscipit tortor eget felis porttitor volutpat.\r\n\r\nCurabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat.', '2021-03-02', 'karya/guru/auahelap.gif'),
 (6, 7, 'belajar bersama', 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus.', '2021-03-11', 'karya/guru/collage4.png'),
-(7, 7, 'Karya Bersama', 'Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.\r\n\r\nCurabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus.\r\n\r\nVivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.\r\n', '2021-03-03', 'karya/guru/collage2025.png');
+(7, 7, 'Karya Bersama', 'Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.\r\n\r\nCurabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus.\r\n\r\nVivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.\r\n', '2021-03-03', 'karya/guru/collage2025.png'),
+(8, 5, 'Karya 1', 'lukisan 1', '2021-02-25', 'karya/guru/pak yaman_1.jpeg'),
+(9, 1, 'karya 2', 'pedagang pecel', '2021-04-02', 'karya/guru/pakherman_2.jpeg'),
+(10, 1, 'Karya 3', 'lukisan 3', '2021-02-09', 'karya/guru/pakherman_3.jpeg'),
+(11, 1, 'karya 4', 'lukisan 4', '2020-01-30', 'karya/guru/pakherman_4.jpeg'),
+(12, 1, 'Karya 5', 'lukisan 5', '2021-04-01', 'karya/guru/pakherman_5.jpeg'),
+(13, 1, 'Karya 6', 'lukisan 6', '2019-10-01', 'karya/guru/pakherman_6.jpeg'),
+(14, 5, 'Karya 2', 'lukisan 2', '2021-02-01', 'karya/guru/pak yaman_2.jpeg'),
+(15, 2, 'Karya 1', 'lukisan 1', '2020-11-15', 'karya/guru/pakafrudin_1.jpeg'),
+(16, 2, 'karya 2', 'lukisan 2', '2020-09-10', 'karya/guru/pakafrudin_3.jpeg'),
+(17, 2, 'Karya 3', 'lukisan 3', '2020-09-19', 'karya/guru/pakafrudin_3.jpeg'),
+(18, 2, 'karya 4', 'lukisan 4', '2019-05-20', 'karya/guru/pakafrudin_4.jpeg'),
+(19, 2, 'Karya 5', 'lukisan 5', '2019-04-17', 'karya/guru/pakafrudin_5.jpeg'),
+(20, 2, 'Karya 6', 'lukisan 6', '2019-12-29', 'karya/guru/pakafrudin_6.jpeg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_kegiatan`
+-- Table structure for table `tb_kegiatan`
 --
 
 CREATE TABLE `tb_kegiatan` (
@@ -84,7 +117,7 @@ CREATE TABLE `tb_kegiatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_kegiatan`
+-- Dumping data for table `tb_kegiatan`
 --
 
 INSERT INTO `tb_kegiatan` (`id`, `tanggal`, `nama_kegiatan`, `gambar`, `keterangan`) VALUES
@@ -95,7 +128,7 @@ INSERT INTO `tb_kegiatan` (`id`, `tanggal`, `nama_kegiatan`, `gambar`, `keterang
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pendaftaran`
+-- Table structure for table `tb_pendaftaran`
 --
 
 CREATE TABLE `tb_pendaftaran` (
@@ -110,7 +143,7 @@ CREATE TABLE `tb_pendaftaran` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_profile_guru`
+-- Table structure for table `tb_profile_guru`
 --
 
 CREATE TABLE `tb_profile_guru` (
@@ -122,67 +155,78 @@ CREATE TABLE `tb_profile_guru` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_profile_guru`
+-- Dumping data for table `tb_profile_guru`
 --
 
 INSERT INTO `tb_profile_guru` (`id`, `name`, `profile`, `foto`, `experience`) VALUES
 (1, 'Herman PG', '<h4>Ketua, Instruktur</h4>\r\n                      <p class=\"card-text\">Lahir di Banjar 24 Juli. <span> Alamat Rumah Perum Bumi Asri, Jl. Mega Asri IX No. C 35 Indihiang, Tasikmalaya</span></p>\r\n						 <p>Herman PG adalah Pensiunan Guru SMKN 3 Tasikmalaya. Senang melukis sejak kecil. Masuk Perguruan tinggi Universitas Perguruan tinggi Indonesia. Kemudian mengamalkan ilmu nya di SMKN 3 Tasikmalaya. \r\n							</p><p>Setelah memasuki Purnabakti, Herman PG bersama Afrudin mendirikan Sanggar Brahmastra Art untuk membimbing anak-anak yang memiliki potensi dibidang seni lukis. </p>', 'images/herman.jpg', '<table class=\"table\">\r\n                            \r\n							\r\n                            \r\n                            <thead>\r\n                              <tr>\r\n                                <th scope=\"col\">NO.</th>\r\n                                <th scope=\"col\">Tahun</th>\r\n                                <th scope=\"col\">Nama Kegiatan</th>\r\n                                <th scope=\"col\">Tempat</th>\r\n                              </tr>\r\n                            </thead>\r\n                            <tbody>\r\n                              <tr>\r\n                                <th scope=\"row\">1</th>\r\n                                <td>2008-2011</td>\r\n                                <td>Pameran Bersama Manajemen Pinggiran SILPA dan KSRT</td>\r\n                                <td>Tasikmalaya, Bandung, Yogyakarta, Bali, IKIP Bandung</td>\r\n                              </tr>\r\n                              <tr>\r\n                                <th scope=\"row\">2</th>\r\n                                <td>2011</td>\r\n                                <td>Pameran Karikatur Bersama Manajemen Pinggiran</td>\r\n                                <td>Tasikmalaya</td>\r\n                              </tr>\r\n                              <tr>\r\n                                <th scope=\"row\">3</th>\r\n                                <td>2012</td>\r\n                                <td>Pameran bersama SILPA, Humaniora di Gallery Terasseni, Hardiknas, Merespon Ruang bersama MP</td>\r\n								<td>Ubud-Bali, UPI Bandung, Gedung Kesenian Tasikmalaya</td>\r\n                              </tr>\r\n							  <tr>\r\n                                <th scope=\"row\">4</th>\r\n                                <td>2017</td>\r\n                                <td>Tumbuh Kembang Anak du RSIA Hj. Karmini</td>\r\n								<td>Tasikmalaya</td>\r\n                              </tr>\r\n							  <tr>\r\n                                <th scope=\"row\">5</th>\r\n                                <td>2018</td>\r\n                                <td>Pameran EXPOSE Edu Art</td>\r\n								<td>Taman Budaya, Yogyakarta</td>\r\n                              </tr>\r\n							  <tr>\r\n                                <th scope=\"row\">6</th>\r\n                                <td>2019</td>\r\n                                <td>Ngaguar Rasa bersama MP, Pameran Wisata PCG (Papandayan Camping Ground, Nuansa Estetika</td>\r\n								<td>Tasikmalaya, Garut, Taman Budaya Yogyakarta</td>\r\n                              </tr>\r\n                            </tbody>\r\n                          </table>'),
 (2, 'Afrudin Achmad', '<h4>Wakil Ketua, Instruktur </h4>\r\n						  <p class=\"card-text\">Lahir di Jakarta, 24 Februari 1966</p>\r\n						  <p><span> Alamat : Jl. Sutisna Senjaya RT.01 RW.04 Cicurug Bata Kota Tasikmalaya 46114 <br> <e-mail>E-mail :afrudin.tiger@gmail.com</e-mail></span></p>\r\n						<p>Belajar melukis secara otodidak dan sering kali mengikuti pameran di berbagai daerah sejak 1984 hingga sekarang di berbagai tempat diantaranya Untuk Wilayah Indonesia yaitu Tasikmalaya, Garut, Bandung, Jakarta, Yogyakarta, Mojokerto, Surabaya, dan Bali.\r\n						Untuk Skala Internasional yaitu 6 kali Pameran tunggal di Jerman, Pameran bersama di Guangxi, China</p>\r\n					  <p>Pernah menjadi instruktur (guru gambar) PT. Faber Castell Internasional dari tahun 2010-2016. Dan mengajar di SLB, Seni Rupa (Seni lukis) sebagai media terapi untuk anak berkebutuhan khusus.</p>\r\n					  <p>Sebagai Ketua Pelukis di Tasikmalaya dengan kelompoknya yang bernama Manajemen Pinggiran Tasikmalaya Painting Community sejak 2010 hingga sekarang.</p>\r\n				', 'images/ayah2.jpg', ' <table class=\"table\">\r\n                            \r\n							\r\n                            \r\n                            <thead>\r\n                              <tr>\r\n                                <th scope=\"col\">NO.</th>\r\n                                <th scope=\"col\">Tahun</th>\r\n                                <th scope=\"col\">Nama Kegiatan</th>\r\n                                <th scope=\"col\">Tempat</th>\r\n                              </tr>\r\n                            </thead>\r\n                            <tbody>\r\n                              <tr>\r\n                                <th scope=\"row\">1</th>\r\n                                <td>2016</td>\r\n                                <td>Together Exhibiton with Community \"Aenne Biermann Gera-Germany\"</td>\r\n                                <td>Germany</td>\r\n                              </tr>\r\n                              <tr>\r\n                                <th scope=\"row\">2</th>\r\n                                <td>2016</td>\r\n                                <td>Together at Foyer der Stadtverwaltung</td>\r\n                                <td>Gera, Germany</td>\r\n                              </tr>\r\n                              <tr>\r\n                                <th scope=\"row\">3</th>\r\n                                <td>2016</td>\r\n								<td>Solo Exhibiton at Tierarztklinik Lohse (Klinik Dokter Lohse) <br>Solo Exhibiton at Thuringin Parliament,<br> Solo Exhibiton at University of Jena, Germany</td>\r\n                                <td>Germany</td>\r\n                              </tr>\r\n							  <tr>\r\n                                <th scope=\"row\">4</th>\r\n                                <td>2016</td>\r\n								<td>\"Indonesian Farbwelten\" with Association Gera</td>\r\n                                <td>Burgergalerie, Germany</td>\r\n                              </tr>\r\n							  <tr>\r\n                                <th scope=\"row\">5</th>\r\n                                <td>2017</td>\r\n								<td>Solo Exhibiton \"Java in Bildern\" at Vet Clinic Dr. Lohse</td>\r\n                                <td>Germany</td>\r\n                              </tr>\r\n							  <tr>\r\n                                <th scope=\"row\">6</th>\r\n                                <td>2018</td>\r\n								<td>Festival Budaya Indonesia at KJRI</td>\r\n                                <td>Guangxi, China</td>\r\n                              </tr>\r\n							  <tr>\r\n                                <th scope=\"row\">7</th>\r\n                                <td>2018</td>\r\n								<td>Exhibiton art in Gera Community at Geraer Volkshochshule \"Aenne Biermann\"</td>\r\n                                <td>Gera,Germany</td>\r\n                              </tr>\r\n							  <tr>\r\n                                <th scope=\"row\">8</th>\r\n                                <td>2018</td>\r\n								<td>Together Exhibiton with Mr. Hans Jorg Waskowski</td>\r\n                                <td>St. Gangloff, Germany</td>\r\n                              </tr>\r\n                            </tbody>\r\n                          </table>'),
-(5, 'Yaman Sutiyaman', '<h4 style=\"font-family: &quot;Roboto Slab&quot;, serif; line-height: 1.1; color: rgb(0, 0, 0); margin-right: 0px; margin-bottom: 20px; margin-left: 0px; font-size: 18px;\">Instruktur</h4><p class=\"card-text\" style=\"margin-right: 0px; margin-bottom: 20px; margin-left: 0px; color: rgb(130, 130, 130); font-family: &quot;Source Sans Pro&quot;, Arial, sans-serif; font-size: 15px;\">Bekerja sebagai Karyawan di Mangkubumi Waterpark. Dan bergabung dengan Manajemen Pinggiran sejak 2014. Dan beberapa kali mengikuti pameran bersama di Tasikmalaya, Bandung, dan Jerman.</p><p style=\"margin-right: 0px; margin-bottom: 20px; margin-left: 0px; color: rgb(130, 130, 130); font-family: &quot;Source Sans Pro&quot;, Arial, sans-serif; font-size: 15px;\">aktif mengikuti pameran sejak bergabung dengan Manajemen Pinggiran hingga sekarang serta menjadi instruktur di Brahmastra Art.</p>', 'images/yaman.jpg', '    <h3 style=\"font-family: &quot;Roboto Slab&quot;, serif; line-height: 1.1; color: rgb(0, 0, 0); margin-right: 0px; margin-bottom: 20px; margin-left: 0px; font-size: 24px;\">Pengalaman Pameran</h3><p style=\"margin-right: 0px; margin-bottom: 20px; margin-left: 0px; color: rgb(130, 130, 130); font-family: &quot;Source Sans Pro&quot;, Arial, sans-serif; font-size: 15px;\">Berikut beberapa Pameran yang pernah diikuti oleh Yaman :</p><hr style=\"margin-top: 20px; margin-bottom: 20px; border-top-color: rgb(238, 238, 238); color: rgb(130, 130, 130); font-family: &quot;Source Sans Pro&quot;, Arial, sans-serif; font-size: 15px;\"><table class=\"table\" style=\"border-spacing: 0px; background-color: rgb(255, 255, 255); width: 555px; max-width: 100%; margin-bottom: 20px; color: rgb(130, 130, 130); font-family: &quot;Source Sans Pro&quot;, Arial, sans-serif; font-size: 15px;\"><thead><tr><th scope=\"col\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top: 0px; border-bottom-color: rgb(221, 221, 221);\">NO.</th><th scope=\"col\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top: 0px; border-bottom-color: rgb(221, 221, 221);\">Tahun</th><th scope=\"col\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top: 0px; border-bottom-color: rgb(221, 221, 221);\">Nama Kegiatan</th><th scope=\"col\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top: 0px; border-bottom-color: rgb(221, 221, 221);\">Tempat</th></tr></thead><tbody><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">1</th><td colspan=\"1\" style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\"></td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Pameran Lukisan bersama Hans Joerg Waskowski di Joglo Mangkubumi Lingkungan Hidup</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Green Area Mangkubumi</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">2</th><td colspan=\"1\" style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\"></td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Silahturahmi Kota di Hotel Mangkubumi</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Mangkubumi, Tasikmalaya</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">3</th><td colspan=\"1\" style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\"></td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Pameran Kreasi Seni dari Limbah</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Singaparna,<br>Garut</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">4</th><td colspan=\"1\" style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\"></td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Potret Kehidupan bersama MP Tasikmalaya</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Tasikmalaya</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">5</th><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">2016</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">\"Indonesian Farbwelten\" with Association Gera</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Burgergalerie, Germany</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">6</th><td colspan=\"1\" style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\"></td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Eksplorasi Media 1 di Resto Hotel Mangkubumi</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Tasikmalaya</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">7</th><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">2017</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Potret Kehidupan bersama MP Tasikmalaya</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Tasikmalaya</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">8</th><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">2017</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Tumbuh Kembang Anak du RSIA Hj. Karmini</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Tasikmalaya</td></tr></tbody></table>'),
-(7, 'Firah', '<p>Profile firah</p>', 'images/toty.jpeg', '    <table class=\"table\">\r\n    <thead>\r\n        <tr>\r\n            <th scope=\"col\">NO.</th>\r\n            <th scope=\"col\">Tahun</th>\r\n            <th scope=\"col\">Nama Kegiatan</th>\r\n            <th scope=\"col\">Tempat</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr>\r\n            <th scope=\"row\">1</th>\r\n            <td>2016</td>\r\n            <td>contoh</td>\r\n            <td>contoh</td>\r\n        </tr>\r\n    </tbody>\r\n    </table>');
+(5, 'Yaman Sutiyaman', '<h4 style=\"font-family: &quot;Roboto Slab&quot;, serif; line-height: 1.1; color: rgb(0, 0, 0); margin-right: 0px; margin-bottom: 20px; margin-left: 0px; font-size: 18px;\">Instruktur</h4><p class=\"card-text\" style=\"margin-right: 0px; margin-bottom: 20px; margin-left: 0px; color: rgb(130, 130, 130); font-family: &quot;Source Sans Pro&quot;, Arial, sans-serif; font-size: 15px;\">Bekerja sebagai Karyawan di Mangkubumi Waterpark. Dan bergabung dengan Manajemen Pinggiran sejak 2014. Dan beberapa kali mengikuti pameran bersama di Tasikmalaya, Bandung, dan Jerman.</p><p style=\"margin-right: 0px; margin-bottom: 20px; margin-left: 0px; color: rgb(130, 130, 130); font-family: &quot;Source Sans Pro&quot;, Arial, sans-serif; font-size: 15px;\">aktif mengikuti pameran sejak bergabung dengan Manajemen Pinggiran hingga sekarang serta menjadi instruktur di Brahmastra Art.</p>', 'images/yaman.jpg', '    <h3 style=\"font-family: &quot;Roboto Slab&quot;, serif; line-height: 1.1; color: rgb(0, 0, 0); margin-right: 0px; margin-bottom: 20px; margin-left: 0px; font-size: 24px;\">Pengalaman Pameran</h3><p style=\"margin-right: 0px; margin-bottom: 20px; margin-left: 0px; color: rgb(130, 130, 130); font-family: &quot;Source Sans Pro&quot;, Arial, sans-serif; font-size: 15px;\">Berikut beberapa Pameran yang pernah diikuti oleh Yaman :</p><hr style=\"margin-top: 20px; margin-bottom: 20px; border-top-color: rgb(238, 238, 238); color: rgb(130, 130, 130); font-family: &quot;Source Sans Pro&quot;, Arial, sans-serif; font-size: 15px;\"><table class=\"table\" style=\"border-spacing: 0px; background-color: rgb(255, 255, 255); width: 555px; max-width: 100%; margin-bottom: 20px; color: rgb(130, 130, 130); font-family: &quot;Source Sans Pro&quot;, Arial, sans-serif; font-size: 15px;\"><thead><tr><th scope=\"col\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top: 0px; border-bottom-color: rgb(221, 221, 221);\">NO.</th><th scope=\"col\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top: 0px; border-bottom-color: rgb(221, 221, 221);\">Tahun</th><th scope=\"col\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top: 0px; border-bottom-color: rgb(221, 221, 221);\">Nama Kegiatan</th><th scope=\"col\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top: 0px; border-bottom-color: rgb(221, 221, 221);\">Tempat</th></tr></thead><tbody><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">1</th><td colspan=\"1\" style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\"></td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Pameran Lukisan bersama Hans Joerg Waskowski di Joglo Mangkubumi Lingkungan Hidup</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Green Area Mangkubumi</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">2</th><td colspan=\"1\" style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\"></td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Silahturahmi Kota di Hotel Mangkubumi</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Mangkubumi, Tasikmalaya</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">3</th><td colspan=\"1\" style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\"></td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Pameran Kreasi Seni dari Limbah</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Singaparna,<br>Garut</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">4</th><td colspan=\"1\" style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\"></td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Potret Kehidupan bersama MP Tasikmalaya</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Tasikmalaya</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">5</th><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">2016</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">\"Indonesian Farbwelten\" with Association Gera</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Burgergalerie, Germany</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">6</th><td colspan=\"1\" style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\"></td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Eksplorasi Media 1 di Resto Hotel Mangkubumi</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Tasikmalaya</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">7</th><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">2017</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Potret Kehidupan bersama MP Tasikmalaya</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Tasikmalaya</td></tr><tr><th scope=\"row\" style=\"padding: 8px; text-align: left; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">8</th><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">2017</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Tumbuh Kembang Anak du RSIA Hj. Karmini</td><td style=\"padding: 8px; line-height: 1.42857; border-top-color: rgb(221, 221, 221);\">Tasikmalaya</td></tr></tbody></table>');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tb_admins`
+-- Indexes for table `tb_admins`
 --
 ALTER TABLE `tb_admins`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_karya_guru`
+-- Indexes for table `tb_hasil_karya`
+--
+ALTER TABLE `tb_hasil_karya`
+  ADD PRIMARY KEY (`id_hasil`);
+
+--
+-- Indexes for table `tb_karya_guru`
 --
 ALTER TABLE `tb_karya_guru`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_kegiatan`
+-- Indexes for table `tb_kegiatan`
 --
 ALTER TABLE `tb_kegiatan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_profile_guru`
+-- Indexes for table `tb_profile_guru`
 --
 ALTER TABLE `tb_profile_guru`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_admins`
+-- AUTO_INCREMENT for table `tb_admins`
 --
 ALTER TABLE `tb_admins`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_karya_guru`
+-- AUTO_INCREMENT for table `tb_hasil_karya`
 --
-ALTER TABLE `tb_karya_guru`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `tb_hasil_karya`
+  MODIFY `id_hasil` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_kegiatan`
+-- AUTO_INCREMENT for table `tb_karya_guru`
+--
+ALTER TABLE `tb_karya_guru`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `tb_kegiatan`
 --
 ALTER TABLE `tb_kegiatan`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_profile_guru`
+-- AUTO_INCREMENT for table `tb_profile_guru`
 --
 ALTER TABLE `tb_profile_guru`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;

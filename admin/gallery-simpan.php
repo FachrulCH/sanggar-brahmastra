@@ -7,7 +7,7 @@ $namaFile = $_FILES['foto_karya']['name'];
 $namaSementara = $_FILES['foto_karya']['tmp_name'];
 
 // tentukan lokasi file akan dipindahkan
-$dirUpload = "../karya/guru/";
+$dirUpload = "../karya/murid/";
 
 // pindahkan file
 $terupload = move_uploaded_file($namaSementara, $dirUpload . $namaFile);
@@ -24,14 +24,14 @@ print_r($_FILES);
 
 // jika sebelumnya memiliki id karya, maka ini adalah mode edit
 if ($_POST['id_karya'] != 0) {
-    $sql_simpan = "UPDATE tb_karya_guru SET judul_karya = '$_POST[judul]', keterangan = '$_POST[keterangan]', tanggal = '$_POST[tanggal]', foto = 'karya/guru/$namaFile' WHERE id = $_POST[id_karya]";
+    $sql_simpan = "UPDATE tb_hasil_karya SET judul_karya_siswa = '$_POST[judul]', karya = 'karya/siswa/$namaFile' WHERE id = $_POST[id_karya]";
 } else {
-    $sql_simpan = "INSERT INTO `tb_karya_guru` (`id_guru`, `judul_karya`, `keterangan`, `tanggal`, `foto`) VALUES ('$_POST[id_guru]', '$_POST[judul]', '$_POST[keterangan]', '$_POST[tanggal]', 'karya/guru/$namaFile');";
+    $sql_simpan = "INSERT INTO `tb_hasil_karya` (`nama_siswa`, `judul_karya_siswa`, `karya_siswa`) VALUES ('$_POST[nama_siswa]', '$_POST[judul_karya_siswa]','karya/siswa/$namaFile');";
 }
 echo "</pre>";
 if (db_exec($sql_simpan)) {
     echo "Karya berhasil tersimpan";
-    redirect_to('karya.php?id='.$_POST['id_guru']);
+    redirect_to('gallery-siswa.php?id='.$_POST['id_hasil']);
 } else {
     echo "Karya gagal tersimpan";
 }

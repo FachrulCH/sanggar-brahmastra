@@ -61,7 +61,8 @@ if (@$_GET['action'] == 'edit'){
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index.html" class="brand-link">
-                <img src="dist/img/icon-sanggar-kreativitas.jpeg" alt="Sanggar Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="dist/img/icon-sanggar-kreativitas.jpeg" alt="Sanggar Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Sanggar</span>
             </a>
 
@@ -78,106 +79,9 @@ if (@$_GET['action'] == 'edit'){
                 </div>
 
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Beranda
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-header">Menu</li>
-                        <li class="nav-item">
-                            <a href="articles.html" class="nav-link">
-                                <i class="nav-icon fas fa-book"></i>
-                                <p>
-                                    Artikel
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>
-                                    Event
-                                    <span class="badge badge-info right">2</span>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
-                                <p>
-                                    Gallery
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-edit"></i>
-                                <p>
-                                    Pendaftaran
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="pages/mailbox/mailbox.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Inbox</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/mailbox/compose.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Buat</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/mailbox/read-mail.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Read</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-book"></i>
-                                <p>
-                                    Courses
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="pages/examples/invoice.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Buat Baru</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/examples/profile.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Lihat Semua</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-plus-square"></i>
-                                <p>
-                                    Lainnya
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                <?php
+                admin_layout_sidebar()
+                ?>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
@@ -191,14 +95,16 @@ if (@$_GET['action'] == 'edit'){
                         <div class="card card-outline card-info">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    Ubag
+                                    Ubah
                                     <small>Kegiatan</small>
                                 </h3>
                                 <!-- tools box -->
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                    <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse"
+                                        data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
-                                    <button type="button" class="btn btn-tool btn-sm" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                                    <button type="button" class="btn btn-tool btn-sm" data-card-widget="remove"
+                                        data-toggle="tooltip" title="Remove">
                                         <i class="fas fa-times"></i></button>
                                 </div>
                                 <!-- /. tools -->
@@ -211,7 +117,8 @@ if (@$_GET['action'] == 'edit'){
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <textarea class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                    <textarea class="textarea" placeholder="Place some text here"
+                                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                 </div>
                                 <p>
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>
@@ -239,10 +146,10 @@ if (@$_GET['action'] == 'edit'){
     <!-- Summernote -->
     <script src="plugins/summernote/summernote-bs4.min.js"></script>
     <script>
-        $(function() {
-            // Summernote
-            $('.textarea').summernote()
-        })
+    $(function() {
+        // Summernote
+        $('.textarea').summernote()
+    })
     </script>
 </body>
 
