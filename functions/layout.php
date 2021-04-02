@@ -40,6 +40,14 @@ function admin_layout_sidebar()
                         </li>
                         <li class="nav-header">Menu</li>
                         <li class="nav-item">
+                            <a href="sanggar.php" class="nav-link">
+                                <i class="nav-icon far fa-building"></i>
+                                <p>
+                                    Profil Sanggar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="guru.php" class="nav-link">
                                 <i class="nav-icon far fa-user"></i>
                                 <p>
@@ -64,8 +72,8 @@ function admin_layout_sidebar()
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="galeri-karya.php" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                            <a href="testimonial.php" class="nav-link">
+                                <i class="nav-icon far fa-thumbs-up"></i>
                                 <p>
                                     Testimonial
                                 </p>
