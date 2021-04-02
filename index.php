@@ -1,7 +1,15 @@
 <?php
 require_once('functions/include_all.php');
 layout_header();
+$sql_profil = "SELECT * FROM `tb_profile_sanggar`";
+$profil = db_get_all($sql_profil);
+$list_testimonial = db_get_all("SELECT * FROM `tb_testimonial`");
+$list_kegiatan = db_get_all("SELECT * FROM tb_kegiatan ORDER BY id DESC LIMIT 5");
+$list_karya = db_get_all("SELECT * FROM `tb_karya_guru`");
 ?>
+
+<!-- Ekko Lightbox -->
+<link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css" />
 
 <body>
     <div class="fh5co-loader"></div>
@@ -58,19 +66,16 @@ layout_header();
             <div class="container">
                 <div class="row animate-box">
                     <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-                        <h2>Sanggar Brahmastra Art</h2>
-                        <h4>Sanggar Brahmastra Art adalah tempat menggali bakat dan kreatifitas anak anak dalam bidang Senirupa khususnya Senilukis tanpa dibebani untuk kelak menjadi seniman atau menjadi pemenang dalam kejuaraan senirupa.</h4>
+                        <?= $profil[0]['judul'] ?>
+                        <?= $profil[0]['keterangan'] ?>
                     </div>
                 </div>
 
                 <div id="fh5co-about">
                     <div class="container">
                         <div class="col-md-6 animate-box">
-                            <h2>Sejarah Sanggar Brahmastra Art</h2>
-                            <p>Brahmastra adalah sejenis senjata pamungkas dalam ceritera pewayangan</p>
-                            <p>Sanggar ini diberi nama Brahmastra Art, Dimana di sanggar ini dijadikan tempat latihan atau belajar seni rupa khususnya seni lukis bagi anak-anak atau siapa saja yang ingin memperdalam kesenirupaan atau seni lukis.</p>
-                            <Di>Dengan berlatih seni lukis diharapkan para peserta memiliki keterampilan sebagai bekal hidup dikemudian hari. Sebagai sampingan,hobi atau malah sebagai bisnis utama. Di manapun kita hidup keterampilan tersebut menjadi senjata utk kehidupan.</p>
-                                <p>Sanggar Brahmastra Art di dirikan Pada Bulan Agustus 2019 dan diresmikan oleh Ibu Hj. Rukmini Pada 28 Juli 2020</p>
+                        <?= $profil[1]['judul'] ?>
+                        <?= $profil[1]['keterangan'] ?>
                         </div>
                         <div class="col-md-6">
                             <img class="img-responsive" src="images/logo.jpeg" alt="Free HTML5 Bootstrap Template" />
@@ -139,36 +144,20 @@ layout_header();
                     <div class="col-md-10 col-md-offset-1">
                         <div class="row animate-box">
                             <div class="owl-carousel owl-carousel-fullwidth">
+                                
+                                <?php 
+                                foreach ($list_testimonial as $testimoni){
+                                ?>
                                 <div class="item">
                                     <div class="testimony-slide active text-center">
-                                        <div class="user" style="background-image: url(images/person1.jpg)"></div>
-                                        <span>Mary Walker<br /><small>Students</small></span>
+                                        <div class="user" style="background-image: url(<?= $WEB_URL . $testimoni['foto'] ?>)"></div>
+                                        <span><?= $testimoni['nama'] ?><br /><small><?= $testimoni['keterangan'] ?></small></span>
                                         <blockquote>
-                                            <p>
-                                                &ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-                                                language ocean.&rdquo;
-                                            </p>
+                                        <p>&ldquo;<?= $testimoni['pesan'] ?>&rdquo;</p>
                                         </blockquote>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="testimony-slide active text-center">
-                                        <div class="user" style="background-image: url(images/person2.jpg)"></div>
-                                        <span>Mike Smith<br /><small>Students</small></span>
-                                        <blockquote>
-                                            <p>&ldquo;Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="testimony-slide active text-center">
-                                        <div class="user" style="background-image: url(images/person3.jpg)"></div>
-                                        <span>Rita Jones<br /><small>Teacher</small></span>
-                                        <blockquote>
-                                            <p>&ldquo;Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-                                        </blockquote>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -185,75 +174,40 @@ layout_header();
                     </div>
                 </div>
                 <div class="row row-padded-mb">
+                <?php 
+                foreach ($list_kegiatan as $kegiatan){
+                ?>
                     <div class="col-md-4 animate-box">
                         <div class="fh5co-event">
                             <div class="date text-center">
-                                <span>15<br />Mar.</span>
+                                <span><?= $kegiatan['tanggal'] ?></span>
                             </div>
-                            <h3><a href="#">USA, International Triathlon Event</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            <p><a href="#">Read More</a></p>
+                            <h3><a href="#"><?= $kegiatan['nama_kegiatan'] ?></a></h3>
+                            <p><?= substr(strip_tags($kegiatan['keterangan']), 0, 150) . "..." ?></p>
+                            <p><a href="kegiatan-detail.php?id=<?= $kegiatan['id'] ?>">Selengkapnya</a></p>
                         </div>
                     </div>
-                    <div class="col-md-4 animate-box">
-                        <div class="fh5co-event">
-                            <div class="date text-center">
-                                <span>15<br />Mar.</span>
-                            </div>
-                            <h3><a href="#">USA, International Triathlon Event</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            <p><a href="#">Read More</a></p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 animate-box">
-                        <div class="fh5co-event">
-                            <div class="date text-center">
-                                <span>15<br />Mar.</span>
-                            </div>
-                            <h3><a href="#">New Device Develope by Microsoft</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            <p><a href="#">Read More</a></p>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                         <h2>Gallery</h2>
                         <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
                     </div>
+                    <?php
+                    foreach ($list_karya as $karya) {
+                    ?>
                     <div class="col-lg-4 col-md-4">
                         <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-img-holder" style="background-image: url(images/project-1.jpg)"></a>
+                            <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>)"  data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>"></a>
                             <div class="blog-text">
-                                <h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
-                                <span class="posted_on">March. 15th</span>
-                                <span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            <h3><a href="#"><?= $karya['judul_karya'] ?></a></h3>
+                                        <span class="posted_on"><?= $karya['tanggal'] ?></span>
+                                        <p><?= $karya['keterangan'] ?></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-img-holder" style="background-image: url(images/project-2.jpg)"></a>
-                            <div class="blog-text">
-                                <h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
-                                <span class="posted_on">March. 15th</span>
-                                <span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-img-holder" style="background-image: url(images/project-3.jpg)"></a>
-                            <div class="blog-text">
-                                <h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
-                                <span class="posted_on">March. 15th</span>
-                                <span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -365,6 +319,18 @@ layout_header();
             month: d.getMonth() + 1,
             day: d.getDate(),
             enableUtc: false,
+        });
+    </script>
+    <!-- Ekko Lightbox -->
+    <script src="plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+    <script>
+        $(function() {
+            $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox({
+                    alwaysShowClose: true,
+                });
+            });
         });
     </script>
 </body>
