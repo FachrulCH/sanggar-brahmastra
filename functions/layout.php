@@ -63,6 +63,14 @@ function admin_layout_sidebar()
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="galeri-karya.php" class="nav-link">
+                                <i class="nav-icon far fa-image"></i>
+                                <p>
+                                    Testimonial
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon far fa-edit"></i>
