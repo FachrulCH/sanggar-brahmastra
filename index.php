@@ -5,7 +5,11 @@ $sql_profil = "SELECT * FROM `tb_profile_sanggar`";
 $profil = db_get_all($sql_profil);
 $list_testimonial = db_get_all("SELECT * FROM `tb_testimonial`");
 $list_kegiatan = db_get_all("SELECT * FROM tb_kegiatan ORDER BY id DESC LIMIT 5");
+$list_karya = db_get_all("SELECT * FROM `tb_karya_guru`");
 ?>
+
+<!-- Ekko Lightbox -->
+<link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css" />
 
 <body>
     <div class="fh5co-loader"></div>
@@ -190,39 +194,20 @@ $list_kegiatan = db_get_all("SELECT * FROM tb_kegiatan ORDER BY id DESC LIMIT 5"
                         <h2>Gallery</h2>
                         <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
                     </div>
+                    <?php
+                    foreach ($list_karya as $karya) {
+                    ?>
                     <div class="col-lg-4 col-md-4">
                         <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-img-holder" style="background-image: url(images/project-1.jpg)"></a>
+                            <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>)"  data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>"></a>
                             <div class="blog-text">
-                                <h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
-                                <span class="posted_on">March. 15th</span>
-                                <span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            <h3><a href="#"><?= $karya['judul_karya'] ?></a></h3>
+                                        <span class="posted_on"><?= $karya['tanggal'] ?></span>
+                                        <p><?= $karya['keterangan'] ?></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-img-holder" style="background-image: url(images/project-2.jpg)"></a>
-                            <div class="blog-text">
-                                <h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
-                                <span class="posted_on">March. 15th</span>
-                                <span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-img-holder" style="background-image: url(images/project-3.jpg)"></a>
-                            <div class="blog-text">
-                                <h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
-                                <span class="posted_on">March. 15th</span>
-                                <span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -334,6 +319,18 @@ $list_kegiatan = db_get_all("SELECT * FROM tb_kegiatan ORDER BY id DESC LIMIT 5"
             month: d.getMonth() + 1,
             day: d.getDate(),
             enableUtc: false,
+        });
+    </script>
+    <!-- Ekko Lightbox -->
+    <script src="plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+    <script>
+        $(function() {
+            $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox({
+                    alwaysShowClose: true,
+                });
+            });
         });
     </script>
 </body>
