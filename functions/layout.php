@@ -316,7 +316,7 @@ function layout_navigation(){
                         <div class="col-xs-10 text-right menu-1">
                             <ul>
                                 <li class="active"><a href="index.php">Home</a></li>
-                                <li><a href="kelas.html">Kelas</a></li>
+                                <li><a href="kelas.php">Kelas</a></li>
                                 <li><a href="guru.php">Guru</a></li>
                                 <li><a href="kegiatan.php">Kegiatan</a></li>
                                 <li><a href="gallery.php">Gallery</a></li>
