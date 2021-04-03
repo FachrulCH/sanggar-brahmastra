@@ -319,7 +319,7 @@ function layout_navigation(){
                                 <li><a href="kelas.php">Kelas</a></li>
                                 <li><a href="guru.php">Guru</a></li>
                                 <li><a href="kegiatan.php">Kegiatan</a></li>
-                                <li><a href="gallery.php">Gallery</a></li>
+                                <li><a href="gallery.php">Galeri Karya</a></li>
                                 <li class="btn-cta"><a href="contact.html"><span>Daftar</span></a></li>
                             </ul>
                         </div>

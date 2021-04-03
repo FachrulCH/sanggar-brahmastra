@@ -5,18 +5,17 @@ if (!empty(@$_GET['kode_id'])){
     $sql_karya .= " WHERE kode_id = '$_GET[kode_id]'";
 }
 $daftar_karya = db_get_all($sql_karya);
-admin_layout_header();
+layout_header();
 ?>
 
 <!-- Ekko Lightbox -->
 <link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css" />
-
 <body>
 
     <div class="fh5co-loader"></div>
 
     <div id="page">
-        <?php layout_navigation(); ?>
+    <?php layout_navigation(); ?>
 
         <aside id="fh5co-hero">
             <div class="flexslider">
@@ -46,24 +45,22 @@ admin_layout_header();
                 } else {
 
                 ?>
-                <div class="row">
-                    <?php
+                    <div class="row">
+                        <?php
                         foreach ($daftar_karya as $karya) {
                         ?>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="fh5co-blog">
-                            <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder"
-                                style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>);" data-toggle="lightbox"
-                                data-title="<?= $karya['judul_karya'] ?>"></a>
-                            <div class="blog-text">
-                                <h3><a href="#"><?= $karya['judul_karya'] ?></a></h3>
-                                <span class="posted_on"><?= $karya['tanggal'] ?></span>
-                                <p><?= $karya['keterangan'] ?></p>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="fh5co-blog">
+                                    <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>);" data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>"></a>
+                                    <div class="blog-text">
+                                        <h3><a href="#"><?= $karya['judul_karya'] ?></a></h3>
+                                        <span class="posted_on"><?= $karya['tanggal'] ?></span>
+                                        <p><?= $karya['keterangan'] ?></p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        <?php } ?>
                     </div>
-                    <?php } ?>
-                </div>
                 <?php } ?>
             </div>
         </div>
@@ -89,8 +86,7 @@ admin_layout_header();
                 <div class="row row-pb-md">
                     <div class="col-md-3 fh5co-widget">
                         <h3>About Education</h3>
-                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta
-                            adipisci architecto culpa amet.</p>
+                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
                         <h3>Learning</h3>
@@ -179,14 +175,14 @@ admin_layout_header();
     <!-- Ekko Lightbox -->
     <script src="plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
     <script>
-    $(function() {
-        $(document).on("click", '[data-toggle="lightbox"]', function(event) {
-            event.preventDefault();
-            $(this).ekkoLightbox({
-                alwaysShowClose: true,
+        $(function() {
+            $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox({
+                    alwaysShowClose: true,
+                });
             });
         });
-    });
     </script>
 </body>
 
