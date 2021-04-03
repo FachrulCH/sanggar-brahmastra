@@ -64,10 +64,10 @@ function admin_layout_sidebar()
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="galeri-karya.php" class="nav-link">
+                            <a href="karya.php" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
-                                    Gallery
+                                    Karya
                                 </p>
                             </a>
                         </li>
@@ -79,7 +79,7 @@ function admin_layout_sidebar()
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
+                        <!-- <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon far fa-edit"></i>
                                 <p>
@@ -130,7 +130,7 @@ function admin_layout_sidebar()
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a href="logout.php" class="nav-link">
                                 <i class="nav-icon fa fa-sign-out-alt"></i>
@@ -202,12 +202,12 @@ function admin_footer()
   HTML;
 }
 
-function create_confirmation($btn_text, $btn_colour, $pesan, $target)
+function create_confirmation($btn_text, $btn_colour, $pesan, $target, $float="")
 {
     $id_modal = rand(10, 100);
     $html = <<<HTML
     <!-- Trigger the modal with a button -->
-    <button type="button" class="btn $btn_colour" data-toggle="modal" data-target="#myModal$id_modal">$btn_text</button>
+    <button type="button" class="btn $btn_colour $float" data-toggle="modal" data-target="#myModal$id_modal">$btn_text</button>
 
     <!-- Modal -->
     <div id="myModal$id_modal" class="modal fade" role="dialog">

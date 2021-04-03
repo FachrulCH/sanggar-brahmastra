@@ -1,15 +1,6 @@
 <?php
 require_once('functions/include_all.php');
-if (!empty(@$_GET['id'])) {
-    // Jika ada ID di url maka masuk mode edit
-    $sql = "SELECT * FROM tb_profile_guru WHERE id = $_GET[id]";
-    $sql_karya = "SELECT * FROM `tb_karya_guru` WHERE id_guru = $_GET[id]";
-}else{
-    $sql = "SELECT * FROM tb_profile_guru";
-    $sql_karya = "SELECT * FROM `tb_karya_guru`";
-    
-}
-$guru = db_query($sql);
+$sql_karya = "SELECT * FROM `tb_karya`";
 $daftar_karya = db_get_all($sql_karya);
 layout_header();
 ?>
@@ -47,7 +38,7 @@ layout_header();
             <div class="container">
                 <?php
                 if (empty($daftar_karya)) {
-                    echo '<div class="alert alert-warning" role="alert"><i class="fa fa-info-circle" aria-hidden="true"></i> Belum ada karya guru</div>';
+                    echo '<div class="alert alert-warning" role="alert"><i class="fa fa-info-circle" aria-hidden="true"></i> Belum ada karya </div>';
                 } else {
 
                 ?>

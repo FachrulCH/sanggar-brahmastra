@@ -4,8 +4,8 @@ layout_header();
 $sql_profil = "SELECT * FROM `tb_profile_sanggar`";
 $profil = db_get_all($sql_profil);
 $list_testimonial = db_get_all("SELECT * FROM `tb_testimonial`");
-$list_kegiatan = db_get_all("SELECT * FROM tb_kegiatan ORDER BY id DESC LIMIT 5");
-$list_karya = db_get_all("SELECT * FROM `tb_karya_guru`");
+$list_kegiatan = db_get_all("SELECT * FROM tb_kegiatan ORDER BY id DESC LIMIT 6");
+$list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
 ?>
 
 <!-- Ekko Lightbox -->

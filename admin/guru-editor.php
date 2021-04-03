@@ -90,7 +90,6 @@ if (empty($guru['experience'])) {
                             <?php } ?>
                         </div>
                     </form>
-                    <a class="btn btn-info btn-lg" href="karya.php?id=<?= $guru['id'] ?>" role="button"><i class="fa fa-paint-brush" aria-hidden="true"></i> Halaman Karya</a>
                 </div>
                 <div class="col-md-8">
                     <form action="guru-simpan.php?aksi=profil" method="post">

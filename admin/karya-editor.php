@@ -6,7 +6,7 @@ admin_layout_sidebar();
 
 if (isset($_GET['id'])) {
     // load data karya jika edit
-    $sql = "SELECT * FROM tb_karya_guru WHERE id = $_GET[id]";
+    $sql = "SELECT * FROM tb_karya WHERE id = $_GET[id]";
     $karya = db_query($sql);
 } else {
     $karya = array(
@@ -25,11 +25,10 @@ if (isset($_GET['id'])) {
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Karya Guru</h1>
+                    <h1 class="m-0 text-dark">Karya</h1>
                 </div><!-- /.col -->
             </div>
             <form action="karya-simpan.php" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id_guru" value="<?= @$_GET['guru'] ?>">
                 <input type="hidden" name="id_karya" value="<?= @$_GET['id'] ?>">
                 <div class="form-group row">
                     <label for="inputJudul" class="col-sm-2 col-form-label">Judul Karya</label>
