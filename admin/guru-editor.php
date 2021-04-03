@@ -99,6 +99,10 @@ if (empty($guru['experience'])) {
                             <input type="text" class="form-control" id="name" name="nama" value="<?= $guru['name'] ?>" />
                         </div>
                         <div class="mb-3">
+                            <label for="kode" class="form-label">Kode Seniman</label>
+                            <input type="text" class="form-control" id="kode" name="kode_id" value="<?= $guru['kode_id'] ?>" />
+                        </div>
+                        <div class="mb-3">
                             <label for="biodata" class="form-label">Biodata</label>
                             <textarea class="form-control textarea" id="biodata" rows="3" name="biodata"><?= $guru['profile'] ?></textarea>
                         </div>

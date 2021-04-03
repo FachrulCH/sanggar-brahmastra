@@ -64,7 +64,7 @@ if ($_GET['aksi'] == 'profil') {
     echo "Simpan profil";
     // print_r($_POST);
     if ($_POST['id'] != 0) {
-        $sql = "UPDATE tb_profile_guru SET name = '$_POST[nama]', profile = '$_POST[biodata]', experience = '$_POST[pengalaman]' WHERE id = $_POST[id]";
+        $sql = "UPDATE tb_profile_guru SET name = '$_POST[nama]', profile = '$_POST[biodata]', experience = '$_POST[pengalaman]', kode_id = '$_POST[kode_id]' WHERE id = $_POST[id]";
     } else {
         $sql = <<<SQL
         INSERT INTO `tb_profile_guru` (`id`, `name`, `profile`, `experience`, `foto`) 

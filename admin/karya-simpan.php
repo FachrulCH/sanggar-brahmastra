@@ -33,9 +33,9 @@ print_r($_FILES);
 
 // jika sebelumnya memiliki id karya, maka ini adalah mode edit
 if ($_POST['id_karya'] != 0) {
-    $sql_simpan = "UPDATE tb_karya SET judul_karya = '$_POST[judul]', keterangan = '$_POST[keterangan]', tanggal = '$_POST[tanggal]', foto = 'karya/$namaFile' WHERE id = $_POST[id_karya]";
+    $sql_simpan = "UPDATE tb_karya SET judul_karya = '$_POST[judul]', keterangan = '$_POST[keterangan]', tanggal = '$_POST[tanggal]', foto = 'karya/$namaFile', kode_id = '$_POST[kode_id]' WHERE id = $_POST[id_karya]";
 } else {
-    $sql_simpan = "INSERT INTO `tb_karya` (`judul_karya`, `keterangan`, `tanggal`, `foto`) VALUES ('$_POST[judul]', '$_POST[keterangan]', '$_POST[tanggal]', 'karya/$namaFile');";
+    $sql_simpan = "INSERT INTO `tb_karya` (`judul_karya`, `keterangan`, `tanggal`, `foto`, `kode_id`) VALUES ('$_POST[judul]', '$_POST[keterangan]', '$_POST[tanggal]', 'karya/$namaFile', '$_POST[kode_id]');";
 }
 echo "</pre>";
 if (db_exec($sql_simpan)) {

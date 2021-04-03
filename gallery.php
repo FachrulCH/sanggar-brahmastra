@@ -1,6 +1,9 @@
 <?php
 require_once('functions/include_all.php');
 $sql_karya = "SELECT * FROM `tb_karya`";
+if (!empty(@$_GET['kode_id'])){
+    $sql_karya .= " WHERE kode_id = '$_GET[kode_id]'";
+}
 $daftar_karya = db_get_all($sql_karya);
 layout_header();
 ?>

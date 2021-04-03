@@ -13,7 +13,8 @@ if (isset($_GET['id'])) {
         'judul_karya' => '',
         'keterangan' => '',
         'tanggal' => '',
-        'foto' => 'karya/guru/sample.jpg'
+        'foto' => 'karya/guru/sample.jpg',
+        'kode_id' => ''
     );
 }
 ?>
@@ -30,6 +31,12 @@ if (isset($_GET['id'])) {
             </div>
             <form action="karya-simpan.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_karya" value="<?= @$_GET['id'] ?>">
+                <div class="form-group row">
+                    <label for="inputKode" class="col-sm-2 col-form-label">Kode Seniman</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputKode" name="kode_id" placeholder="Tuliskan kode seniman" required="true" value="<?= $karya['kode_id'] ?>">
+                    </div>
+                </div>
                 <div class="form-group row">
                     <label for="inputJudul" class="col-sm-2 col-form-label">Judul Karya</label>
                     <div class="col-sm-10">
