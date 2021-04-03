@@ -6,14 +6,15 @@ admin_layout_sidebar();
 
 if (isset($_GET['id'])) {
     // load data karya jika edit
-    $sql = "SELECT * FROM tb_karya_guru WHERE id = $_GET[id]";
+    $sql = "SELECT * FROM tb_karya WHERE id = $_GET[id]";
     $karya = db_query($sql);
 } else {
     $karya = array(
         'judul_karya' => '',
         'keterangan' => '',
         'tanggal' => '',
-        'foto' => 'karya/guru/sample.jpg'
+        'foto' => 'karya/guru/sample.jpg',
+        'kode_id' => ''
     );
 }
 ?>
@@ -25,12 +26,17 @@ if (isset($_GET['id'])) {
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Karya Guru</h1>
+                    <h1 class="m-0 text-dark">Karya</h1>
                 </div><!-- /.col -->
             </div>
             <form action="karya-simpan.php" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id_guru" value="<?= @$_GET['guru'] ?>">
                 <input type="hidden" name="id_karya" value="<?= @$_GET['id'] ?>">
+                <div class="form-group row">
+                    <label for="inputKode" class="col-sm-2 col-form-label">Kode Seniman</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputKode" name="kode_id" placeholder="Tuliskan kode seniman" required="true" value="<?= $karya['kode_id'] ?>">
+                    </div>
+                </div>
                 <div class="form-group row">
                     <label for="inputJudul" class="col-sm-2 col-form-label">Judul Karya</label>
                     <div class="col-sm-10">
