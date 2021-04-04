@@ -1,6 +1,15 @@
 <?php
 include_once('../functions/include_all.php');
 
+if (@$_GET['action'] == 'hapus'){
+    $sql = "DELETE FROM tb_kegiatan WHERE id = $_GET[id]";
+    if (db_exec($sql)){
+        redirect_to('kegiatan.php');
+    }else{
+        echo 'Gagal hapus kegiatan';
+    }
+}
+
 // Uploading kegiatan
 // ambil data file
 $namaFile = $_FILES['foto_kegiatan']['name'];

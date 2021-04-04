@@ -67,8 +67,20 @@ if (isset($_GET['id'])) {
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-sm-10">
+                    <div class="col-sm-12">
                         <button type="submit" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> Simpan</button>
+                        <?php 
+                        // jika mode edit (id tidak kosong), munculkan tombol hapus
+                        if (!empty(@$_GET['id'])){
+                            create_confirmation(
+                                '<i class="fa fa-trash" aria-hidden="true"></i> Hapus Kegiatan',
+                                'btn-danger',
+                                'Yakin hapus kegiatan ini?',
+                                "kegiatan-simpan.php?action=hapus&id=$kegiatan[id]",
+                                "float-right"
+                            );
+                        }
+                        ?>
                     </div>
                 </div>
             </form>
