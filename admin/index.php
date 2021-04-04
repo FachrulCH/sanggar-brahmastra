@@ -3,6 +3,9 @@ include_once('../functions/include_all.php');
 should_login();
 admin_layout_header("Profile Guru");
 admin_layout_sidebar();
+$jumlah_karya = db_query("SELECT count(1) as total FROM `tb_karya`");
+$jumlah_kegiatan = db_query("SELECT count(1) as total FROM `tb_kegiatan`");
+$jumlah_guru = db_query("SELECT count(1) as total FROM `tb_profile_guru`");
 ?>
         <div class="content-wrapper">
             <!-- Main content -->
@@ -10,63 +13,48 @@ admin_layout_sidebar();
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>150</h3>
+                                    <h3><?= $jumlah_guru['total'] ?></h3>
 
-                                    <p>New Orders</p>
+                                    <p>Jumlah Guru</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-bag"></i>
+                                    <i class="ion ion-person"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="guru.php" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                    <h3><?= $jumlah_karya['total'] ?></h3>
 
-                                    <p>Bounce Rate</p>
+                                    <p>Jumlah Karya</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
+                                    <i class="ion ion-images"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="karya.php" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>44</h3>
+                                    <h3><?= $jumlah_kegiatan['total'] ?></h3>
 
-                                    <p>User Registrations</p>
+                                    <p>Jumlah Kegiatan</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-person-add"></i>
+                                    <i class="ion ion-calendar"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3>65</h3>
-
-                                    <p>Unique Visitors</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="kegiatan.php" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
