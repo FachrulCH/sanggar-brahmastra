@@ -1,16 +1,18 @@
 <?php
 require_once('functions/include_all.php');
-$sql = "SELECT * FROM tb_kegiatan";
-$daftar_kegiatan = db_get_all($sql);
+$sql = "SELECT * FROM tb_kegiatan where id = $_GET[id]";
+$kegiatan = db_query($sql);
 layout_header();
 ?>
+<!-- Ekko Lightbox -->
+<link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css" />
 
 <body>
 
     <div class="fh5co-loader"></div>
 
     <div id="page">
-    <?php layout_navigation(); ?>
+        <?php layout_navigation(); ?>
 
         <aside id="fh5co-hero">
             <div class="flexslider">
@@ -36,37 +38,24 @@ layout_header();
             <div class="container">
                 <div class="row animate-box">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>Events &amp; Agenda</h2>
-                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                    </div>
+                        <h2><?= $kegiatan['nama_kegiatan'] ?></h2>
+                       </div>
                 </div>
                 <div class="row row-padded-mb">
-                    <?php
-                    foreach ($daftar_kegiatan as $kegiatan) {
-                    ?>
-                        <!-- <div class="col-md-6 animate-box">
-                            <div class="fh5co-event">
-                                <div class="date text-center"><span><?= $kegiatan['tanggal'] ?></span></div>
-                                <h3><a href="#"><?= $kegiatan['nama_kegiatan'] ?></a></h3>
-                                <p><?= substr(strip_tags($kegiatan['keterangan']), 0, 150) . "..." ?></p>
-                                <p><a href="#">Selengkapnya</a></p>
-                            </div>
-                        </div> -->
+                    <div class="col-lg-3 col-md-3">
+                        <a href="<?= $WEB_URL . $kegiatan['gambar'] ?>" data-toggle="lightbox" data-title="<?= $kegiatan['nama_kegiatan'] ?>">
+                            <img src="<?= $WEB_URL . $kegiatan['gambar'] ?>" width="90%" class="float-rigt">
+                        </a>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <div class="fh5co-blog">
 
-                        <div class="col-lg-4 col-md-4">
-                            <div class="fh5co-blog">
-                                <a href="#" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $kegiatan['gambar'] ?>);"></a>
-                                <div class="blog-text">
-                                    <h3><a href="kegiatan-detail.php?id=<?= $kegiatan['id'] ?>"><?= $kegiatan['nama_kegiatan'] ?></a></h3>
-                                    <span class="posted_on"><?= $kegiatan['tanggal'] ?></span>
-                                    <p><?= substr(strip_tags($kegiatan['keterangan']), 0, 150) . "..." ?></p>
-                                    <p><a href="kegiatan-detail.php?id=<?= $kegiatan['id'] ?>">Selengkapnya</a></p>
-                                </div>
+                            <div class="blog-text">
+                                <span class="posted_on"><?= $kegiatan['tanggal'] ?></span>
+                                <p><?= $kegiatan['keterangan'] ?></p>
                             </div>
                         </div>
-                    <?php
-                    }
-                    ?>
+                    </div>
                 </div>
 
             </div>
@@ -166,6 +155,18 @@ layout_header();
     <script src="js/simplyCountdown.js"></script>
     <!-- Main -->
     <script src="js/main.js"></script>
+    <!-- Ekko Lightbox -->
+    <script src="plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+    <script>
+        $(function() {
+            $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox({
+                    alwaysShowClose: true,
+                });
+            });
+        });
+    </script>
     <script>
         var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 
