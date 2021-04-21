@@ -3,9 +3,19 @@ require_once('functions/include_all.php');
 $sql = "SELECT * FROM tb_kegiatan where id = $_GET[id]";
 $kegiatan = db_query($sql);
 layout_header();
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <!-- Ekko Lightbox -->
 <link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css" />
+<style type="text/css">
+    .share-konten {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 5px;
+        width: 32px;
+        height: 32px;
+    }
+</style>
 
 <body>
 
@@ -39,7 +49,7 @@ layout_header();
                 <div class="row animate-box">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                         <h2><?= $kegiatan['nama_kegiatan'] ?></h2>
-                       </div>
+                    </div>
                 </div>
                 <div class="row row-padded-mb">
                     <div class="col-lg-3 col-md-3">
@@ -54,6 +64,23 @@ layout_header();
                                 <span class="posted_on"><?= $kegiatan['tanggal'] ?></span>
                                 <p><?= $kegiatan['keterangan'] ?></p>
                             </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>
+                                        <a href="https://www.facebook.com/share.php?u=<?= $actual_link ?>" target="_blank">
+                                            <img src="https://image.flaticon.com/icons/svg/124/124010.svg" class="share-konten">
+                                            Bagikan ke Facebook </a>
+                                    </h3>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3><a href="https://twitter.com/intent/tweet?url=<?= $actual_link ?>" target="_blank">
+                                            <img src="https://image.flaticon.com/icons/svg/124/124021.svg" class="share-konten">
+                                            Bagikan ke Twitter</a></h3>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
