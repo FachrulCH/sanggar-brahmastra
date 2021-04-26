@@ -2,19 +2,19 @@
 require_once('functions/include_all.php');
 $sql = "SELECT * FROM tb_kegiatan where id = $_GET[id]";
 $kegiatan = db_query($sql);
-layout_header();
+layout_header('Kegiatan');
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <!-- Ekko Lightbox -->
 <link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css" />
 <style type="text/css">
-    .share-konten {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-right: 5px;
-        width: 32px;
-        height: 32px;
-    }
+.share-konten {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    width: 32px;
+    height: 32px;
+}
 </style>
 
 <body>
@@ -53,7 +53,8 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 </div>
                 <div class="row row-padded-mb">
                     <div class="col-lg-3 col-md-3">
-                        <a href="<?= $WEB_URL . $kegiatan['gambar'] ?>" data-toggle="lightbox" data-title="<?= $kegiatan['nama_kegiatan'] ?>">
+                        <a href="<?= $WEB_URL . $kegiatan['gambar'] ?>" data-toggle="lightbox"
+                            data-title="<?= $kegiatan['nama_kegiatan'] ?>">
                             <img src="<?= $WEB_URL . $kegiatan['gambar'] ?>" width="90%" class="float-rigt">
                         </a>
                     </div>
@@ -64,18 +65,22 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                 <span class="posted_on"><?= $kegiatan['tanggal'] ?></span>
                                 <p><?= $kegiatan['keterangan'] ?></p>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <h3>
-                                        <a href="https://www.facebook.com/share.php?u=<?= $actual_link ?>" target="_blank">
-                                            <img src="https://image.flaticon.com/icons/svg/124/124010.svg" class="share-konten">
+                                        <a href="https://www.facebook.com/share.php?u=<?= $actual_link ?>"
+                                            target="_blank">
+                                            <img src="https://image.flaticon.com/icons/svg/124/124010.svg"
+                                                class="share-konten">
                                             Bagikan ke Facebook </a>
                                     </h3>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3><a href="https://twitter.com/intent/tweet?url=<?= $actual_link ?>" target="_blank">
-                                            <img src="https://image.flaticon.com/icons/svg/124/124021.svg" class="share-konten">
+                                    <h3><a href="https://twitter.com/intent/tweet?url=<?= $actual_link ?>"
+                                            target="_blank">
+                                            <img src="https://image.flaticon.com/icons/svg/124/124021.svg"
+                                                class="share-konten">
                                             Bagikan ke Twitter</a></h3>
                                 </div>
                             </div>
@@ -95,58 +100,46 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             <div class="container">
                 <div class="row row-pb-md">
                     <div class="col-md-3 fh5co-widget">
-                        <h3>About Education</h3>
-                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        <h3>Sanggar Brahmastra Art</h3>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Learning</h3>
+                        <h3>Brahmastra Art</h3>
                         <ul class="fh5co-footer-links">
-                            <li><a href="#">Course</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Meetups</a></li>
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h3>Brahmastra Art</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h3>Brahmastra Art</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Learn &amp; Grow</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Handbook</a></li>
-                            <li><a href="#">Held Desk</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Engage us</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Marketing</a></li>
-                            <li><a href="#">Visual Assistant</a></li>
-                            <li><a href="#">System Analysis</a></li>
-                            <li><a href="#">Advertise</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Legal</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Find Designers</a></li>
-                            <li><a href="#">Find Developers</a></li>
-                            <li><a href="#">Teams</a></li>
-                            <li><a href="#">Advertise</a></li>
-                            <li><a href="#">API</a></li>
-                        </ul>
-                    </div>
                 </div>
 
                 <div class="row copyright">
                     <div class="col-md-12 text-center">
                         <p>
                             <small class="block">&copy; 2021. Brahmastra Art. All Rights Reserved.</small>
-                            <small class="block">Designed by Firah Pratiwi</small></small>
+
                         </p>
                     </div>
                 </div>
@@ -185,32 +178,32 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     <!-- Ekko Lightbox -->
     <script src="plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
     <script>
-        $(function() {
-            $(document).on("click", '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox({
-                    alwaysShowClose: true,
-                });
+    $(function() {
+        $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox({
+                alwaysShowClose: true,
             });
         });
+    });
     </script>
     <script>
-        var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
+    var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 
-        // default example
-        simplyCountdown('.simply-countdown-one', {
-            year: d.getFullYear(),
-            month: d.getMonth() + 1,
-            day: d.getDate()
-        });
+    // default example
+    simplyCountdown('.simply-countdown-one', {
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate()
+    });
 
-        //jQuery example
-        $('#simply-countdown-losange').simplyCountdown({
-            year: d.getFullYear(),
-            month: d.getMonth() + 1,
-            day: d.getDate(),
-            enableUtc: false
-        });
+    //jQuery example
+    $('#simply-countdown-losange').simplyCountdown({
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate(),
+        enableUtc: false
+    });
     </script>
 </body>
 

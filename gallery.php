@@ -5,17 +5,18 @@ if (!empty(@$_GET['kode_id'])){
     $sql_karya .= " WHERE kode_id = '$_GET[kode_id]'";
 }
 $daftar_karya = db_get_all($sql_karya);
-layout_header();
+layout_header('Galeri Karya');
 ?>
 
 <!-- Ekko Lightbox -->
 <link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css" />
+
 <body>
 
     <div class="fh5co-loader"></div>
 
     <div id="page">
-    <?php layout_navigation(); ?>
+        <?php layout_navigation(); ?>
 
         <aside id="fh5co-hero">
             <div class="flexslider">
@@ -45,38 +46,25 @@ layout_header();
                 } else {
 
                 ?>
-                    <div class="row">
-                        <?php
+                <div class="row">
+                    <?php
                         foreach ($daftar_karya as $karya) {
                         ?>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="fh5co-blog">
-                                    <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>);" data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>"></a>
-                                    <div class="blog-text">
-                                        <h3><a href="#"><?= $karya['judul_karya'] ?></a></h3>
-                                        <span class="posted_on"><?= $karya['tanggal'] ?></span>
-                                        <p><?= $karya['keterangan'] ?></p>
-                                    </div>
-                                </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="fh5co-blog">
+                            <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder"
+                                style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>);" data-toggle="lightbox"
+                                data-title="<?= $karya['judul_karya'] ?>"></a>
+                            <div class="blog-text">
+                                <h3><a href="#"><?= $karya['judul_karya'] ?></a></h3>
+                                <span class="posted_on"><?= $karya['tanggal'] ?></span>
+                                <p><?= $karya['keterangan'] ?></p>
                             </div>
-                        <?php } ?>
+                        </div>
                     </div>
-                <?php } ?>
-            </div>
-        </div>
-
-        <div id="fh5co-register" style="background-image: url(images/img_bg_2.jpg);">
-            <div class="overlay"></div>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 animate-box">
-                    <div class="date-counter text-center">
-                        <h2>Get 400 of Online Courses for Free</h2>
-                        <h3>By Mike Smith</h3>
-                        <div class="simply-countdown simply-countdown-one"></div>
-                        <p><strong>Limited Offer, Hurry Up!</strong></p>
-                        <p><a href="#" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
-                    </div>
+                    <?php } ?>
                 </div>
+                <?php } ?>
             </div>
         </div>
 
@@ -85,58 +73,46 @@ layout_header();
             <div class="container">
                 <div class="row row-pb-md">
                     <div class="col-md-3 fh5co-widget">
-                        <h3>About Education</h3>
-                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        <h3>Sanggar Brahmastra Art</h3>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Learning</h3>
+                        <h3>Brahmastra Art</h3>
                         <ul class="fh5co-footer-links">
-                            <li><a href="#">Course</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Meetups</a></li>
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h3>Brahmastra Art</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h3>Brahmastra Art</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Learn &amp; Grow</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Handbook</a></li>
-                            <li><a href="#">Held Desk</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Engage us</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Marketing</a></li>
-                            <li><a href="#">Visual Assistant</a></li>
-                            <li><a href="#">System Analysis</a></li>
-                            <li><a href="#">Advertise</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Legal</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Find Designers</a></li>
-                            <li><a href="#">Find Developers</a></li>
-                            <li><a href="#">Teams</a></li>
-                            <li><a href="#">Advertise</a></li>
-                            <li><a href="#">API</a></li>
-                        </ul>
-                    </div>
                 </div>
 
                 <div class="row copyright">
                     <div class="col-md-12 text-center">
                         <p>
                             <small class="block">&copy; 2021. Brahmastra Art. All Rights Reserved.</small>
-                            <small class="block">Designed by Firah Pratiwi</small></small>
+
                         </p>
                     </div>
                 </div>
@@ -175,14 +151,14 @@ layout_header();
     <!-- Ekko Lightbox -->
     <script src="plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
     <script>
-        $(function() {
-            $(document).on("click", '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox({
-                    alwaysShowClose: true,
-                });
+    $(function() {
+        $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox({
+                alwaysShowClose: true,
             });
         });
+    });
     </script>
 </body>
 

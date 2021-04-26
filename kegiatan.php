@@ -2,7 +2,7 @@
 require_once('functions/include_all.php');
 $sql = "SELECT * FROM tb_kegiatan";
 $daftar_kegiatan = db_get_all($sql);
-layout_header();
+layout_header('Kegiatan');
 ?>
 
 <body>
@@ -10,7 +10,7 @@ layout_header();
     <div class="fh5co-loader"></div>
 
     <div id="page">
-    <?php layout_navigation(); ?>
+        <?php layout_navigation(); ?>
 
         <aside id="fh5co-hero">
             <div class="flexslider">
@@ -37,14 +37,15 @@ layout_header();
                 <div class="row animate-box">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                         <h2>Events &amp; Agenda</h2>
-                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
+                            provident. Odit ab aliquam dolor eius.</p>
                     </div>
                 </div>
                 <div class="row row-padded-mb">
                     <?php
                     foreach ($daftar_kegiatan as $kegiatan) {
                     ?>
-                        <!-- <div class="col-md-6 animate-box">
+                    <!-- <div class="col-md-6 animate-box">
                             <div class="fh5co-event">
                                 <div class="date text-center"><span><?= $kegiatan['tanggal'] ?></span></div>
                                 <h3><a href="#"><?= $kegiatan['nama_kegiatan'] ?></a></h3>
@@ -53,17 +54,20 @@ layout_header();
                             </div>
                         </div> -->
 
-                        <div class="col-lg-4 col-md-4">
-                            <div class="fh5co-blog">
-                                <a href="#" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $kegiatan['gambar'] ?>);"></a>
-                                <div class="blog-text">
-                                    <h3><a href="kegiatan-detail.php?id=<?= $kegiatan['id'] ?>"><?= $kegiatan['nama_kegiatan'] ?></a></h3>
-                                    <span class="posted_on"><?= $kegiatan['tanggal'] ?></span>
-                                    <p><?= substr(strip_tags($kegiatan['keterangan']), 0, 150) . "..." ?></p>
-                                    <p><a href="kegiatan-detail.php?id=<?= $kegiatan['id'] ?>">Selengkapnya</a></p>
-                                </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="fh5co-blog">
+                            <a href="#" class="blog-img-holder"
+                                style="background-image: url(<?= $WEB_URL . $kegiatan['gambar'] ?>);"></a>
+                            <div class="blog-text">
+                                <h3><a
+                                        href="kegiatan-detail.php?id=<?= $kegiatan['id'] ?>"><?= $kegiatan['nama_kegiatan'] ?></a>
+                                </h3>
+                                <span class="posted_on"><?= $kegiatan['tanggal'] ?></span>
+                                <p><?= substr(strip_tags($kegiatan['keterangan']), 0, 150) . "..." ?></p>
+                                <p><a href="kegiatan-detail.php?id=<?= $kegiatan['id'] ?>">Selengkapnya</a></p>
                             </div>
                         </div>
+                    </div>
                     <?php
                     }
                     ?>
@@ -79,58 +83,46 @@ layout_header();
             <div class="container">
                 <div class="row row-pb-md">
                     <div class="col-md-3 fh5co-widget">
-                        <h3>About Education</h3>
-                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        <h3>Sanggar Brahmastra Art</h3>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Learning</h3>
+                        <h3>Brahmastra Art</h3>
                         <ul class="fh5co-footer-links">
-                            <li><a href="#">Course</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Meetups</a></li>
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h3>Brahmastra Art</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h3>Brahmastra Art</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Learn &amp; Grow</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Handbook</a></li>
-                            <li><a href="#">Held Desk</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Engage us</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Marketing</a></li>
-                            <li><a href="#">Visual Assistant</a></li>
-                            <li><a href="#">System Analysis</a></li>
-                            <li><a href="#">Advertise</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Legal</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Find Designers</a></li>
-                            <li><a href="#">Find Developers</a></li>
-                            <li><a href="#">Teams</a></li>
-                            <li><a href="#">Advertise</a></li>
-                            <li><a href="#">API</a></li>
-                        </ul>
-                    </div>
                 </div>
 
                 <div class="row copyright">
                     <div class="col-md-12 text-center">
                         <p>
                             <small class="block">&copy; 2021. Brahmastra Art. All Rights Reserved.</small>
-                            <small class="block">Designed by Firah Pratiwi</small></small>
+
                         </p>
                     </div>
                 </div>
@@ -167,22 +159,22 @@ layout_header();
     <!-- Main -->
     <script src="js/main.js"></script>
     <script>
-        var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
+    var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 
-        // default example
-        simplyCountdown('.simply-countdown-one', {
-            year: d.getFullYear(),
-            month: d.getMonth() + 1,
-            day: d.getDate()
-        });
+    // default example
+    simplyCountdown('.simply-countdown-one', {
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate()
+    });
 
-        //jQuery example
-        $('#simply-countdown-losange').simplyCountdown({
-            year: d.getFullYear(),
-            month: d.getMonth() + 1,
-            day: d.getDate(),
-            enableUtc: false
-        });
+    //jQuery example
+    $('#simply-countdown-losange').simplyCountdown({
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate(),
+        enableUtc: false
+    });
     </script>
 </body>
 

@@ -1,6 +1,6 @@
 <?php
 require_once('functions/include_all.php');
-layout_header();
+layout_header('Kelas');
 ;
 
 ?>
@@ -104,38 +104,27 @@ layout_header();
                             <li><a href="contact.html">Daftar</a></li>
                         </ul>
                     </div>
-
                     <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Learn &amp; Grow</h3>
+                        <h3>Brahmastra Art</h3>
                         <ul class="fh5co-footer-links">
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Handbook</a></li>
-                            <li><a href="#">Held Desk</a></li>
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h3>Brahmastra Art</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Engage us</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Marketing</a></li>
-                            <li><a href="#">Visual Assistant</a></li>
-                            <li><a href="#">System Analysis</a></li>
-                            <li><a href="#">Advertise</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Legal</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Find Designers</a></li>
-                            <li><a href="#">Find Developers</a></li>
-                            <li><a href="#">Teams</a></li>
-                            <li><a href="#">Advertise</a></li>
-                            <li><a href="#">API</a></li>
-                        </ul>
-                    </div>
                 </div>
 
                 <div class="row copyright">

@@ -297,9 +297,7 @@ function layout_navigation(){
                                 <li>
                                     <a href="https://twitter.com"><i class="icon-twitter2"></i></a>
                                 </li>
-                                <li>
-                                    <a href="https://github.com/firahpp"><i class="icon-github"></i></a>
-                                </li>
+                                
                             </ul>
                         </div>
                     </div>

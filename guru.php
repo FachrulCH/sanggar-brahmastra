@@ -2,7 +2,7 @@
 require_once('functions/include_all.php');
 $sql = "SELECT * from tb_profile_guru order by id asc";
 $data_guru = db_get_all($sql);
-layout_header();
+layout_header('Guru');
 ?>
 
 
@@ -11,12 +11,12 @@ layout_header();
     <div class="fh5co-loader"></div>
 
     <div id="page">
-    <?php layout_navigation(); ?>
+        <?php layout_navigation(); ?>
 
         <aside id="fh5co-hero">
             <div class="flexslider">
                 <ul class="slides">
-                    <li style="background-image: url(images/guru.jpeg);">
+                    <li style="background-image: url(images/guru1.jpg);">
                         <div class="overlay-gradient"></div>
                         <div class="container">
                             <div class="row">
@@ -59,7 +59,8 @@ layout_header();
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">Hasil Karya</h3>
-                                <a href="gallery.php?kode_id=<?= $guru['kode_id'] ?>" class="btn btn-primary">Lihat Karya</a>
+                                <a href="gallery.php?kode_id=<?= $guru['kode_id'] ?>" class="btn btn-primary">Lihat
+                                    Karya</a>
                             </div>
                         </div>
                     </div>
@@ -76,59 +77,45 @@ layout_header();
             <div class="container">
                 <div class="row row-pb-md">
                     <div class="col-md-3 fh5co-widget">
-                        <h3>About Education</h3>
-                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta
-                            adipisci architecto culpa amet.</p>
+                        <h3>Sanggar Brahmastra Art</h3>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Learning</h3>
+                        <h3>Brahmastra Art</h3>
                         <ul class="fh5co-footer-links">
-                            <li><a href="#">Course</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Meetups</a></li>
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h3>Brahmastra Art</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h3>Brahmastra Art</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Learn &amp; Grow</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Handbook</a></li>
-                            <li><a href="#">Held Desk</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Engage us</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Marketing</a></li>
-                            <li><a href="#">Visual Assistant</a></li>
-                            <li><a href="#">System Analysis</a></li>
-                            <li><a href="#">Advertise</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Legal</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Find Designers</a></li>
-                            <li><a href="#">Find Developers</a></li>
-                            <li><a href="#">Teams</a></li>
-                            <li><a href="#">Advertise</a></li>
-                            <li><a href="#">API</a></li>
-                        </ul>
-                    </div>
                 </div>
-
                 <div class="row copyright">
                     <div class="col-md-12 text-center">
                         <p>
                             <small class="block">&copy; 2021. Brahmastra Art. All Rights Reserved.</small>
-                            <small class="block">Designed by Firah Pratiwi</small></small>
+
                         </p>
                     </div>
                 </div>

@@ -25,8 +25,9 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2 text-center slider-text">
                                     <div class="slider-text-inner">
-                                        <h1>The Great Aim of Education is not Knowledge, But Action</h1>
-                                        <p><a class="btn btn-primary btn-lg" href="#">Start Learning Now!</a></p>
+                                        <h1>Temukan bakat mu</h1>
+                                        <p><a class="btn btn-primary btn-lg"
+                                                href="https://forms.gle/hTQdtpaTtvbepSRx6">Join Sekarang!</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -38,8 +39,10 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2 text-center slider-text">
                                     <div class="slider-text-inner">
-                                        <h1>The Great Aim of Education is not Knowledge, But Action</h1>
-                                        <p><a class="btn btn-primary btn-lg btn-learn" href="#">Start Learning Now!</a></p>
+                                        <h1>Tingakatkan kreasi dan apresiasi Seni Rupa bersama Sanggar Brahmastra Art
+                                        </h1>
+                                        <p><a class="btn btn-primary btn-lg btn-learn"
+                                                href="https://forms.gle/hTQdtpaTtvbepSRx6">Join Sekarang!</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -50,10 +53,7 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2 text-center slider-text">
-                                    <div class="slider-text-inner">
-                                        <h1>We Help You to Learn New Things</h1>
-                                        <p><a class="btn btn-primary btn-lg btn-learn" href="#">Start Learning Now!</a></p>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -74,8 +74,8 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                 <div id="fh5co-about">
                     <div class="container">
                         <div class="col-md-6 animate-box">
-                        <?= $profil[1]['judul'] ?>
-                        <?= $profil[1]['keterangan'] ?>
+                            <?= $profil[1]['judul'] ?>
+                            <?= $profil[1]['keterangan'] ?>
                         </div>
                         <div class="col-md-6">
                             <img class="img-responsive" src="images/logo.jpeg" alt="Free HTML5 Bootstrap Template" />
@@ -101,9 +101,13 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                             <a href="#" class="course-img" style="background-image: url(oil-pastel-crayons.jpg)"> </a>
                             <div class="desc">
                                 <h3><a href="#">Oil Pastel</a></h3>
-                                <p>Oil Pastel atau Pastel Minyak adalah media melukis yang terbuat dari lilin dan minyak yang sulit mengering.</p>
-                                <p>Di dalam lukisan, oil pastel membrikan kesan lebih kasar dan bertekstur dari pastel biasa. hasil akhirnya akaln lebih lengket tetapi melekat lebih lama pada media gambar.</p>
-                                <span><a href="https://forms.gle/hTQdtpaTtvbepSRx6" class="btn btn-primary btn-sm btn-course">Ambil Kelas</a></span>
+                                <p>Oil Pastel atau Pastel Minyak adalah media melukis yang terbuat dari lilin dan minyak
+                                    yang sulit mengering.</p>
+                                <p>Di dalam lukisan, oil pastel membrikan kesan lebih kasar dan bertekstur dari pastel
+                                    biasa. hasil akhirnya akaln lebih lengket tetapi melekat lebih lama pada media
+                                    gambar.</p>
+                                <span><a href="https://forms.gle/hTQdtpaTtvbepSRx6"
+                                        class="btn btn-primary btn-sm btn-course">Ambil Kelas</a></span>
                             </div>
                         </div>
                     </div>
@@ -112,8 +116,10 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                             <a href="#" class="course-img" style="background-image: url(acrylic.jpg)"> </a>
                             <div class="desc">
                                 <h3><a href="#">Cat Acrylic</a></h3>
-                                <p>Cat akrilik larut dalam air, tetapi tahan air saat cat sudah mengering. warna cat akrilik lebih solid dibandingkan cat air.</p>
-                                <span><a href="https://forms.gle/hTQdtpaTtvbepSRx6" class="btn btn-primary btn-sm btn-course">Ambil Kelas</a></span>
+                                <p>Cat akrilik larut dalam air, tetapi tahan air saat cat sudah mengering. warna cat
+                                    akrilik lebih solid dibandingkan cat air.</p>
+                                <span><a href="https://forms.gle/hTQdtpaTtvbepSRx6"
+                                        class="btn btn-primary btn-sm btn-course">Ambil Kelas</a></span>
                             </div>
                         </div>
                     </div>
@@ -122,9 +128,12 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                             <a href="#" class="course-img" style="background-image: url(oil.jpg)"> </a>
                             <div class="desc">
                                 <h3><a href="#">Cat Minyak</a></h3>
-                                <p>Campuran minyak membuat cat jenis ini memberi efek kecerahan warna, cat ini membentuk pasta liat sehingga memberikan tekstur yang mengesankan</p>
-                                <p>Cat minyak memiliki gradasi warna paling lebar, tidak dapat dicapai oleh jenis cat lain. tetapi cat ini memiliki bau menyengat.</p>
-                                <span><a href="https://forms.gle/hTQdtpaTtvbepSRx6" class="btn btn-primary btn-sm btn-course">Ambil Kelas</a></span>
+                                <p>Campuran minyak membuat cat jenis ini memberi efek kecerahan warna, cat ini membentuk
+                                    pasta liat sehingga memberikan tekstur yang mengesankan</p>
+                                <p>Cat minyak memiliki gradasi warna paling lebar, tidak dapat dicapai oleh jenis cat
+                                    lain. tetapi cat ini memiliki bau menyengat.</p>
+                                <span><a href="https://forms.gle/hTQdtpaTtvbepSRx6"
+                                        class="btn btn-primary btn-sm btn-course">Ambil Kelas</a></span>
                             </div>
                         </div>
                     </div>
@@ -144,16 +153,17 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                     <div class="col-md-10 col-md-offset-1">
                         <div class="row animate-box">
                             <div class="owl-carousel owl-carousel-fullwidth">
-                                
+
                                 <?php 
                                 foreach ($list_testimonial as $testimoni){
                                 ?>
                                 <div class="item">
                                     <div class="testimony-slide active text-center">
-                                        <div class="user" style="background-image: url(<?= $WEB_URL . $testimoni['foto'] ?>)"></div>
+                                        <div class="user"
+                                            style="background-image: url(<?= $WEB_URL . $testimoni['foto'] ?>)"></div>
                                         <span><?= $testimoni['nama'] ?><br /><small><?= $testimoni['keterangan'] ?></small></span>
                                         <blockquote>
-                                        <p>&ldquo;<?= $testimoni['pesan'] ?>&rdquo;</p>
+                                            <p>&ldquo;<?= $testimoni['pesan'] ?>&rdquo;</p>
                                         </blockquote>
                                     </div>
                                 </div>
@@ -170,11 +180,12 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                 <div class="row animate-box">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                         <h2>Kegiatan</h2>
-                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
+                            provident. Odit ab aliquam dolor eius.</p>
                     </div>
                 </div>
                 <div class="row row-padded-mb">
-                <?php 
+                    <?php 
                 foreach ($list_kegiatan as $kegiatan){
                 ?>
                     <div class="col-md-4 animate-box">
@@ -192,18 +203,21 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                         <h2>Gallery</h2>
-                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
+                            provident. Odit ab aliquam dolor eius.</p>
                     </div>
                     <?php
                     foreach ($list_karya as $karya) {
                     ?>
                     <div class="col-lg-4 col-md-4">
                         <div class="fh5co-blog animate-box">
-                            <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder" style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>)"  data-toggle="lightbox" data-title="<?= $karya['judul_karya'] ?>"></a>
+                            <a href="<?= $WEB_URL . $karya['foto'] ?>" class="blog-img-holder"
+                                style="background-image: url(<?= $WEB_URL . $karya['foto'] ?>)" data-toggle="lightbox"
+                                data-title="<?= $karya['judul_karya'] ?>"></a>
                             <div class="blog-text">
-                            <h3><a href="#"><?= $karya['judul_karya'] ?></a></h3>
-                                        <span class="posted_on"><?= $karya['tanggal'] ?></span>
-                                        <p><?= $karya['keterangan'] ?></p>
+                                <h3><a href="#"><?= $karya['judul_karya'] ?></a></h3>
+                                <span class="posted_on"><?= $karya['tanggal'] ?></span>
+                                <p><?= $karya['keterangan'] ?></p>
                             </div>
                         </div>
                     </div>
@@ -217,58 +231,46 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
             <div class="container">
                 <div class="row row-pb-md">
                     <div class="col-md-3 fh5co-widget">
-                        <h3>About Education</h3>
-                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        <h3>Sanggar Brahmastra Art</h3>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Learning</h3>
+                        <h3>Brahmastra Art</h3>
                         <ul class="fh5co-footer-links">
-                            <li><a href="#">Course</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Meetups</a></li>
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h3>Brahmastra Art</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h3>Brahmastra Art</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="kelas.html">Kelas</a></li>
+                            <li><a href="teacher-profil.html">Guru</a></li>
+                            <li><a href="kegiatan.html">Kegiatan</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Daftar</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Learn &amp; Grow</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Handbook</a></li>
-                            <li><a href="#">Held Desk</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Engage us</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Marketing</a></li>
-                            <li><a href="#">Visual Assistant</a></li>
-                            <li><a href="#">System Analysis</a></li>
-                            <li><a href="#">Advertise</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                        <h3>Legal</h3>
-                        <ul class="fh5co-footer-links">
-                            <li><a href="#">Find Designers</a></li>
-                            <li><a href="#">Find Developers</a></li>
-                            <li><a href="#">Teams</a></li>
-                            <li><a href="#">Advertise</a></li>
-                            <li><a href="#">API</a></li>
-                        </ul>
-                    </div>
                 </div>
 
                 <div class="row copyright">
                     <div class="col-md-12 text-center">
                         <p>
                             <small class="block">&copy; 2021. Brahmastra Art. All Rights Reserved.</small>
-                            <small class="block">Designed by Firah Pratiwi</small>
+
                         </p>
                     </div>
                 </div>
@@ -304,34 +306,34 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
     <!-- Main -->
     <script src="js/main.js"></script>
     <script>
-        var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
+    var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 
-        // default example
-        simplyCountdown(".simply-countdown-one", {
-            year: d.getFullYear(),
-            month: d.getMonth() + 1,
-            day: d.getDate(),
-        });
+    // default example
+    simplyCountdown(".simply-countdown-one", {
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate(),
+    });
 
-        //jQuery example
-        $("#simply-countdown-losange").simplyCountdown({
-            year: d.getFullYear(),
-            month: d.getMonth() + 1,
-            day: d.getDate(),
-            enableUtc: false,
-        });
+    //jQuery example
+    $("#simply-countdown-losange").simplyCountdown({
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate(),
+        enableUtc: false,
+    });
     </script>
     <!-- Ekko Lightbox -->
     <script src="plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
     <script>
-        $(function() {
-            $(document).on("click", '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox({
-                    alwaysShowClose: true,
-                });
+    $(function() {
+        $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox({
+                alwaysShowClose: true,
             });
         });
+    });
     </script>
 </body>
 
