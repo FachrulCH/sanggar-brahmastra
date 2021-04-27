@@ -11,6 +11,7 @@ if (isset($_GET['id'])) {
     // isi data defaultnya, kosongan
     $guru = array(
         'id' => 0,
+        'kode_id' => '',
         'foto' => '',
         'name' => '',
         'profile' => '',
