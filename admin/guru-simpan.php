@@ -67,8 +67,8 @@ if ($_GET['aksi'] == 'profil') {
         $sql = "UPDATE tb_profile_guru SET name = '$_POST[nama]', profile = '$_POST[biodata]', experience = '$_POST[pengalaman]', kode_id = '$_POST[kode_id]' WHERE id = $_POST[id]";
     } else {
         $sql = <<<SQL
-        INSERT INTO `tb_profile_guru` (`id`, `name`, `profile`, `experience`, `foto`) 
-        VALUES (NULL, '$_POST[nama]', '$_POST[biodata]', '$_POST[pengalaman]', '$image_default');
+        INSERT INTO `tb_profile_guru` (`id`, `name`, `profile`, `experience`, `foto`, `kode_id`) 
+        VALUES (NULL, '$_POST[nama]', '$_POST[biodata]', '$_POST[pengalaman]', '$image_default', '$_POST[kode_id]');
         SQL;
     }
     // print($sql);
