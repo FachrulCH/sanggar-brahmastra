@@ -202,9 +202,8 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                 </div>
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>Gallery</h2>
-                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
-                            provident. Odit ab aliquam dolor eius.</p>
+                        <h2>Karya</h2>
+                        <p>Kaya ini berisi hasil lukis dari guru dan murid murid sanggar.</p>
                     </div>
                     <?php
                     foreach ($list_karya as $karya) {

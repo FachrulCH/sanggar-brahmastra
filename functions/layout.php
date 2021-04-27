@@ -132,6 +132,15 @@ function admin_layout_sidebar()
                             </ul>
                         </li> -->
                         <li class="nav-item">
+                            <a href="https://drive.google.com/drive/folders/1xthgylDeoeggJUJmoFvf1oEAXksgymve?usp=sharing" class="nav-link">
+                                <i class="nav-icon fa fa-book"></i>
+                                <p>
+                                    Manual Book
+                                </p>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item">
                             <a href="logout.php" class="nav-link">
                                 <i class="nav-icon fa fa-sign-out-alt"></i>
                                 <p>
