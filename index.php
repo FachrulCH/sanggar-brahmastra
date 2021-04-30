@@ -19,7 +19,7 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
         <aside id="fh5co-hero">
             <div class="flexslider">
                 <ul class="slides">
-                    <li style="background-image: url(images/slider-1.1.JPG)">
+                    <li style="background-image: url(images/sliderfix.JPG)">
                         <div class="overlay-gradient"></div>
                         <div class="container">
                             <div class="row">
@@ -33,7 +33,7 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                             </div>
                         </div>
                     </li>
-                    <li style="background-image: url(images/slider1.jpg)">
+                    <li style="background-image: url(images/slider2.jpg)">
                         <div class="overlay-gradient"></div>
                         <div class="container">
                             <div class="row">
@@ -48,16 +48,7 @@ $list_karya = db_get_all("SELECT * FROM `tb_karya` ORDER BY id DESC LIMIT 6 ");
                             </div>
                         </div>
                     </li>
-                    <li style="background-image: url(images/slider2.jpg)">
-                        <div class="overlay-gradient"></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-2 text-center slider-text">
 
-                                </div>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </aside>
